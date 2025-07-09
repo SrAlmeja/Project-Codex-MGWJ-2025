@@ -1,0 +1,26 @@
+# Archivos temporales y de sistema
+*.log
+*.tmp
+*.bak
+Thumbs.db
+.DS_Store
+
+# Carpetas de guardado y backup
+save/
+backup/
+
+# Archivos de configuración local
+config.rpgproject
+Game.rpgproject
+
+# Archivos de compilación o exportación
+www/
+output/
+dist/
+
+# Archivos de sistema de RPG Maker
+data/System.json
+data/MapInfos.json
+
+# Archivos de caché o runtime
+cache/
