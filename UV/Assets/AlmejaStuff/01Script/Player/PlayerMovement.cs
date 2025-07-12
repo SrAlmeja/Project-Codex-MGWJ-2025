@@ -1,16 +1,21 @@
+using System;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     #region Variables
 
-    [Header("Movement"), SerializeField] private Rigidbody2D rb2D;
+    [SerializeField] private GameObject player;
+    
+    [Header("Movement"), SerializeField] private Rigidbody2D playerRB;
     [SerializeField] private float movementSpeed;
     [SerializeField] private InputActionReference move, attack;
     private Vector2 _moveDirection;
-    
-    [Header("Animation"), SerializeField] private SpriteRenderer playerSprite;
-    [SerializeField] private Animator playerAnimator;
+
+    [Header("Attack"), SerializeField] private GameObject attackEfect;
+    [Header("Animation"), SerializeField] private Animator playerAnimator, attackEAnimator;
+    private Vector3 _playerRotation;
     
     #endregion
     
@@ -19,27 +24,47 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         _moveDirection = move.action.ReadValue<Vector2>();
+
     }
     private void FixedUpdate()
     {
         Movement();
     }
     
+    private void OnEnable()
+    {
+        attack.action.started += Attack;
+    }
+
+    private void OnDisable()
+    {
+        attack.action.started -= Attack;
+    }
+    
     #endregion
 
     #region MovementFunctions
-
+    
     /// <summary>
     /// transform the player position based in the moveDirection and the movenentSpeed
     /// Also Flip the Sprite based in the _moveDirection
     /// </summary>
     private void Movement()
     {
-        rb2D.MovePosition(rb2D.position + _moveDirection * movementSpeed * Time.fixedDeltaTime);
-        if (_moveDirection.x < 0) playerSprite.flipX = true;
-        else if (_moveDirection.x > 0) playerSprite.flipX = false;
+        playerRB.MovePosition(playerRB.position + _moveDirection * movementSpeed * Time.fixedDeltaTime);
+        if (_moveDirection.x < 0) _playerRotation = new Vector3(0, 180, 0);
+        else if (_moveDirection.x > 0) _playerRotation = new Vector3(0, 0, 0);
         if (_moveDirection.x == 0 & _moveDirection.y == 0) playerAnimator.ResetTrigger("Walking");
         else playerAnimator.SetTrigger("Walking");
+        
+        player.transform.eulerAngles = _playerRotation;
     }
+    
+    private void Attack(InputAction.CallbackContext context)
+    {
+        playerAnimator.Play("Player Punch");
+        attackEAnimator.SetTrigger("IsAttacking");
+    }
+    
     #endregion
 }
