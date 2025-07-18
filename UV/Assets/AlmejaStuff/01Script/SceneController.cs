@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class SceneController : MonoBehaviour
 {
+<<<<<<< HEAD
     #region Singleton
+=======
+    #region Singleton (opcional)
+>>>>>>> origin/Personal/SrAlmeja
     public static SceneController Instance { get; private set; }
 
     private void Awake()
@@ -24,9 +28,15 @@ public class SceneController : MonoBehaviour
     /// <summary>
     /// Load scene by name.
     /// </summary>
+<<<<<<< HEAD
     public void LoadScene(string sceneName, LoadSceneMode mode = LoadSceneMode.Single)
     {
         SceneManager.LoadScene(sceneName, mode);
+=======
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+>>>>>>> origin/Personal/SrAlmeja
     }
 
     /// <summary>
@@ -41,9 +51,15 @@ public class SceneController : MonoBehaviour
     /// <summary>
     /// Load scene asynchronously with optional delay or loading screen.
     /// </summary>
+<<<<<<< HEAD
     public void LoadSceneAsync(string sceneName, LoadSceneMode mode = LoadSceneMode.Single)
     {
         StartCoroutine(AsyncScene(sceneName, mode));
+=======
+    public void LoadSceneAsync(string sceneName)
+    {
+        StartCoroutine(AsyncScene(sceneName));
+>>>>>>> origin/Personal/SrAlmeja
     }
     
     public void CloseApplication()
@@ -54,9 +70,15 @@ public class SceneController : MonoBehaviour
         #endif
     }
     
+<<<<<<< HEAD
     private IEnumerator AsyncScene(string sceneName, LoadSceneMode mode = LoadSceneMode.Single)
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, mode);
+=======
+    private IEnumerator AsyncScene(string sceneName)
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+>>>>>>> origin/Personal/SrAlmeja
         asyncLoad.allowSceneActivation = true;
         while (!asyncLoad.isDone)
         {
