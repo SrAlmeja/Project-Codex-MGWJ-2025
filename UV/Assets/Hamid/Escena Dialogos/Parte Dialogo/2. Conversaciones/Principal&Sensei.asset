@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e13e01f58019a4b14b8aab03af3f6763, type: 3}
+  m_Name: Principal&Sensei
+  m_EditorClassIdentifier: 
+  leftCharacter: {fileID: 11400000, guid: b455ab563067e2447a68d9feffb00476, type: 2}
+  rightCharacter: {fileID: 11400000, guid: 3f6e737cc2de2644a9a0e77947644d26, type: 2}
+  sentences:
+  - character: {fileID: 11400000, guid: b455ab563067e2447a68d9feffb00476, type: 2}
+    text: Hola Sensei.!
+  - character: {fileID: 11400000, guid: 3f6e737cc2de2644a9a0e77947644d26, type: 2}
+    text: "Hola peque\xF1o aprendiz.!... \xBFque te lleva por estos andares?"
+  - character: {fileID: 11400000, guid: b455ab563067e2447a68d9feffb00476, type: 2}
+    text: 'Solo sus grandes consejos... y el buen clima '
