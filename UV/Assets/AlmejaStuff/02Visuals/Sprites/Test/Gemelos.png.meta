@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -257,10 +257,10 @@ TextureImporter:
       name: Gemelos_7
       rect:
         serializedVersion: 2
-        x: 832
-        y: 318
-        width: 108
-        height: 236
+        x: 411
+        y: 313
+        width: 90
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,34 +275,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gemelos_8
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 61
-        width: 105
-        height: 239
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8fd18d8c60417f8499e9d00036648784
-      internalID: 236753136
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Gemelos_11
       rect:
         serializedVersion: 2
-        x: 488
-        y: 58
-        width: 131
-        height: 246
+        x: 832
+        y: 318
+        width: 108
+        height: 236
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -320,10 +299,10 @@ TextureImporter:
       name: Gemelos_12
       rect:
         serializedVersion: 2
-        x: 652
-        y: 60
-        width: 132
-        height: 246
+        x: 24
+        y: 61
+        width: 105
+        height: 239
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -338,7 +317,70 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gemelos_13
+      name: Gemelos_9
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 311
+        width: 75
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83229e5eb0c9a0048bc3abd88b929d1a
+      internalID: 1614087003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gemelos_15
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 58
+        width: 131
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d96186edf164c6d4f808d5732dc82364
+      internalID: 1978884735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gemelos_16
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 60
+        width: 132
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 883a69bcb6a692a45a134e01d363c203
+      internalID: 330561191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gemelos_17
       rect:
         serializedVersion: 2
         x: 843
@@ -352,8 +394,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 681004ccc45395e4fab466a44863fc3e
-      internalID: 1209111989
+      spriteID: 4cadfa4f08f22f545a0bc0b8b05fb844
+      internalID: 1584561350
       vertices: []
       indices: 
       edges: []
@@ -375,6 +417,10 @@ TextureImporter:
       Gemelos_11: 1439119925
       Gemelos_12: -1322986267
       Gemelos_13: 1209111989
+      Gemelos_14: 174360621
+      Gemelos_15: 1978884735
+      Gemelos_16: 330561191
+      Gemelos_17: 1584561350
       Gemelos_2: 1880058036
       Gemelos_3: 1879177004
       Gemelos_4: 1045317060
