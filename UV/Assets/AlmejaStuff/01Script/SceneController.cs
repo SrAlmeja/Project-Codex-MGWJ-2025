@@ -31,6 +31,14 @@ public class SceneController : MonoBehaviour
     }
 
     /// <summary>
+    /// A public method to load a scene from a button.
+    /// </summary>
+    /// <param name="sceneName"></param>
+    public void LoadSceneFromButton(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+    }    
+    /// <summary>
     /// Reload current active scene.
     /// </summary>
     public void ReloadCurrentScene()
