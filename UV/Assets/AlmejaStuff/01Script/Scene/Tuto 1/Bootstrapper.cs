@@ -1,12 +1,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
 
 public class Bootstrapper : PersistentSingleton<Bootstrapper>
 {
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-    static async void Init()
+    static void Init()
     {
         Debug.Log("Bootstrapper...");
-        await SceneManager.LoadSceneAsync("Bootstrapper", LoadSceneMode.Single);
+        LoadBootstrapperScene();
+    }
+
+    static async void LoadBootstrapperScene()
+    {
+        await SceneManager.LoadSceneAsync("Bootstrapper", LoadSceneMode.Single).AsTask();
     }
 }

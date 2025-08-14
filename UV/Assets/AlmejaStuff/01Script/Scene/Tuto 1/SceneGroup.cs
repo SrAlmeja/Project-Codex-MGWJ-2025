@@ -11,6 +11,11 @@ namespace Systems.SceneManagment
         public string GroupName = "New Scene Group";
         public List<SceneData> Scenes;
 
+        /// <summary>
+        /// Permite buscar la primera escena en el grupo que coincida con el tipo (Scenetype) y devuelve su nombre.
+        /// </summary>
+        /// <param name="sceneType"></param>
+        /// <returns></returns>
         public string FindSceneNameByType(SceneType sceneType)
         {
             return Scenes.FirstOrDefault(scene => scene.SceneType == sceneType)?.Reference.Name;
