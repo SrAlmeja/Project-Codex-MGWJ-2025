@@ -102,7 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 381818178580611046}
   m_Layer: 0
-  m_Name: PlayerStuff 1
+  m_Name: Ixquic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,7 +164,11 @@ PrefabInstance:
     - target: {fileID: 5721320868696051497, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1879177004, guid: 6b36e6d57e0dc924a8f09caf22178cf9, type: 3}
+      objectReference: {fileID: -550943972, guid: 28c28b47bdceb8748b5f5b9dee0b006c, type: 3}
+    - target: {fileID: 7384256632953147513, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6b4d00e1fd82c7f4f89b8b5e010273a4, type: 2}
     - target: {fileID: 8785346275031686959, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
