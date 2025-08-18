@@ -102,7 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 381818178580611046}
   m_Layer: 0
-  m_Name: "Rat\xF3n"
+  m_Name: GemeloA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,7 +139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4615354999416819234, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_Mass
-      value: 0.50848675
+      value: 0.47094607
       objectReference: {fileID: 0}
     - target: {fileID: 5207936491410336040, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_Size.x
@@ -158,15 +158,19 @@ PrefabInstance:
       value: -0.17441115
       objectReference: {fileID: 0}
     - target: {fileID: 5721320868696051497, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5721320868696051497, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1800254566, guid: 28c28b47bdceb8748b5f5b9dee0b006c, type: 3}
+      objectReference: {fileID: 1439119925, guid: 6b36e6d57e0dc924a8f09caf22178cf9, type: 3}
+    - target: {fileID: 7384256632953147513, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: be604907562d6854c8511d396e99f289, type: 2}
     - target: {fileID: 8407845896195889890, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
-      propertyPath: playerAnimator
+      propertyPath: attackEfect
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8407845896195889890, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
+      propertyPath: attackEAnimator
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8785346275031686959, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
@@ -221,41 +225,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7384256632953147513, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 4602187636330037392, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4921789303617179737, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8198355751553514300}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
---- !u!1 &2099959818261901029 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4921789303617179737, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
-  m_PrefabInstance: {fileID: 6442745747861634748}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &8198355751553514300
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2099959818261901029}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8e879d91c27805e458bd4c41a80657bf, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &2342693127181296019 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8785346275031686959, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
