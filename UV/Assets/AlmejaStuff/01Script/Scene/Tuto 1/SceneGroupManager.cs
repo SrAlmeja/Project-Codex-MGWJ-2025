@@ -37,17 +37,16 @@ namespace Systems.SceneManagment
 
             var operationGroup = new AsyncOperationGroup(totalScenesToLoad);
 
-            for (var i = 0; i < sceneCount; i++)
+            foreach (var sceneData in group.Scenes)
             {
-                var sceneData = group.Scenes[i];
-                if (reloadDupScenes == false && loadedScenes.Contains(sceneData.Name)) continue;
+                if (!reloadDupScenes && loadedScenes.Contains(sceneData.Name)) continue;
 
                 var operation = SceneManager.LoadSceneAsync(sceneData.Name, LoadSceneMode.Additive);
-
                 operationGroup.Operations.Add(operation);
 
                 OnSceneLoaded.Invoke(sceneData.Name);
             }
+
 
             while (!operationGroup.IsDone)
             {
@@ -80,7 +79,12 @@ namespace Systems.SceneManagment
                 if (!sceneAt.isLoaded) continue;
 
                 var sceneName = sceneAt.name;
-                if (sceneName.Equals(activeScene) || sceneName == "Bootstrapper") continue;
+                
+                if (sceneName.Equals(activeScene) || 
+                    sceneName == "Bootstrapper" || 
+                    sceneName == "PersistantPlayer" || 
+                    sceneName == "UI") continue;
+
                 scenes.Add(sceneName);
             }
 

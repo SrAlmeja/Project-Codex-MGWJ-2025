@@ -9,9 +9,6 @@ namespace Systems.SceneManagement
     public class SceneLoaderV2 : MonoBehaviour
     {
         #region Loading Variables
-        [SerializeField,Header("ScenesToLoad")] SceneGroup[]scenesToLoad; 
-        public readonly SceneGroupManager Manager = new SceneGroupManager();
-        
         [SerializeField, Header("Loading Stuff")] private Image loadingBar;
         [SerializeField] private float fillSpeed = 0.5f;
         [SerializeField] private Canvas loadingCanvas;
@@ -19,11 +16,14 @@ namespace Systems.SceneManagement
 
         private float _targetProgress;
         private bool _isLoading;
+        
+        [SerializeField,Header("ScenesToLoad")] SceneGroup[]scenesToLoad; 
+        public readonly SceneGroupManager Manager = new SceneGroupManager();
         #endregion
 
         #region Unity Functions
 
-        void awake()
+        void Awake()
         {
             Manager.OnSceneLoaded += sceneName => Debug.Log("Loaded" + sceneName);
             Manager.OnSceneUnloaded += sceneName => Debug.Log("Unloaded" + sceneName);
