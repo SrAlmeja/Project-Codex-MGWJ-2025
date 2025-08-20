@@ -483,6 +483,18 @@ MonoBehaviour:
           m_StringArgument: 00Panel00
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1327399527}
+        m_TargetAssemblyTypeName: MainMenuSceneLoader, Assembly-CSharp
+        m_MethodName: OnStartNGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &156829429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1517,7 +1529,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &466243248
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1627,7 +1639,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1404530608}
+      - m_Target: {fileID: 466243247}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -4150,6 +4162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1327399526}
   - component: {fileID: 1327399525}
+  - component: {fileID: 1327399527}
   m_Layer: 0
   m_Name: Controllers
   m_TagString: Untagged
@@ -4184,6 +4197,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1327399527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327399524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3284d519c3674f4cad2c11a01d94e57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneGroupName: Church
 --- !u!1 &1395211060
 GameObject:
   m_ObjectHideFlags: 0
@@ -4474,7 +4500,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1404530609
 RectTransform:
   m_ObjectHideFlags: 0
