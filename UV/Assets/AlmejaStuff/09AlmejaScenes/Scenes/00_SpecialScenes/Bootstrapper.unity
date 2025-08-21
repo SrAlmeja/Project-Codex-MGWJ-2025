@@ -701,11 +701,11 @@ MonoBehaviour:
     - Reference:
         asset: {fileID: 102900000, guid: 1a934700803cbef4ba1e13cc8508c61d, type: 3}
         guid: 1a934700803cbef4ba1e13cc8508c61d
-      SceneType: 2
+      SceneType: 6
     - Reference:
         asset: {fileID: 102900000, guid: fc53ce3c54dc7134ba36e76a55385729, type: 3}
         guid: fc53ce3c54dc7134ba36e76a55385729
-      SceneType: 4
+      SceneType: 6
 --- !u!4 &1221533417
 Transform:
   m_ObjectHideFlags: 0

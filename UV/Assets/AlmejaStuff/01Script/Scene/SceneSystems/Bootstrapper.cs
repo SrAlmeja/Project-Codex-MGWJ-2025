@@ -13,6 +13,8 @@ public class Bootstrapper : PersistentSingleton<Bootstrapper>
 
     static async void LoadBootstrapperScene()
     {
+        if (SceneManager.GetActiveScene().name == "Bootstrapper") return;
+
         await SceneManager.LoadSceneAsync("Bootstrapper", LoadSceneMode.Single).AsTask();
     }
 }

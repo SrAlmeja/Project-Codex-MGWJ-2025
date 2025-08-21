@@ -39,23 +39,50 @@ namespace Systems.SceneManagment
 
             foreach (var sceneData in group.Scenes)
             {
-                if (!reloadDupScenes && loadedScenes.Contains(sceneData.Name)) continue;
+                if (!Application.CanStreamedLevelBeLoaded(sceneData.Name))
+                {
+                    Debug.LogError($"La escena '{sceneData.Name}' no está en el Build Settings.");
+                    continue;
+                }
 
                 var operation = SceneManager.LoadSceneAsync(sceneData.Name, LoadSceneMode.Additive);
+                if (operation == null)
+                {
+                    Debug.LogError($"No se pudo iniciar la carga de la escena '{sceneData.Name}'.");
+                    continue;
+                }
+
+                operation.allowSceneActivation = true; // ← Esto es clave
                 operationGroup.Operations.Add(operation);
-
                 OnSceneLoaded.Invoke(sceneData.Name);
+
             }
+            
+            // TimeOut
+            int timeoutMs = 3000; // Tiempo máximo de espera: 15 segundos
+            int elapsedMs = 0;
+            int delayMs = 100;
 
-
-            while (!operationGroup.IsDone)
+            while (!operationGroup.IsDone && elapsedMs < timeoutMs)
             {
                 progress?.Report(operationGroup.Progress);
-                await Task.Delay(100);
+                await Task.Delay(delayMs);
+                elapsedMs += delayMs;
             }
 
-            Scene activeScene =
-                SceneManager.GetSceneByName(ActiveSceneGroup.FindSceneNameByType(SceneType.ActiveScene));
+            if (!operationGroup.IsDone)
+            {
+                Debug.LogError("Timeout: Las escenas no terminaron de cargar en el tiempo esperado.");
+                foreach (var op in operationGroup.Operations)
+                {
+                    if (op != null && !op.isDone)
+                    {
+                        Debug.LogWarning($"Escena aún en carga: {op.allowSceneActivation}, progreso: {op.progress}");
+                    }
+                }
+            }
+
+            Scene activeScene = SceneManager.GetSceneByName(ActiveSceneGroup.FindSceneNameByType(SceneType.ActiveScene));
 
             if (activeScene.IsValid())
             {
@@ -105,6 +132,7 @@ namespace Systems.SceneManagment
                 await Task.Delay(100);
             }
         }
+        
     }
 
     public readonly struct AsyncOperationGroup

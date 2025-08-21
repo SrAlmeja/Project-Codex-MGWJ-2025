@@ -21,7 +21,8 @@ namespace Systems.SceneManagement
         private bool _isLoading;
         
         [SerializeField,Header("ScenesToLoad")]
-        SceneGroup[]scenesToLoad; 
+        SceneGroup[]scenesToLoad;
+        
         public readonly SceneGroupManager Manager = new SceneGroupManager();
         #endregion
 
@@ -37,8 +38,24 @@ namespace Systems.SceneManagement
         }
         async void Start()
         {
+            if (scenesToLoad == null || scenesToLoad.Length == 0)
+            {
+                Debug.LogError("SceneLoaderV2: No hay grupos de escenas definidos.");
+                return;
+            }
+
+            var firstGroup = scenesToLoad[0];
+            if (firstGroup == null || firstGroup.Scenes == null || firstGroup.Scenes.Count == 0)
+            {
+                /*Debug.LogError("SceneLoaderV2: El primer grupo está vacío o mal configurado.");
+                return;*/
+                LoadSceneGroup(0).Forget();
+            }
+
+            Debug.Log($"SceneLoaderV2: Cargando grupo inicial '{firstGroup.GroupName}'...");
             await LoadSceneGroup(0);
         }
+
         private void Update()
         {
             if (!_isLoading)
