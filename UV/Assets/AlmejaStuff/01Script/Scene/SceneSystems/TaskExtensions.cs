@@ -12,11 +12,7 @@ public static class TaskExtensions
         if (task == null) return;
 
         // Solo continuamos si el Task falla (OnlyOnFaulted)
-        task.ContinueWith(t =>
-            {
-                Debug.LogError($"[TaskExtensions] Excepción en Task: {t.Exception.Flatten()}");
-            },
-            TaskContinuationOptions.OnlyOnFaulted);
+        task.ContinueWith(t => { Debug.LogError($"[TaskExtensions] Excepción en Task: {t.Exception.Flatten()}"); }, TaskContinuationOptions.OnlyOnFaulted);
     }
 }
 

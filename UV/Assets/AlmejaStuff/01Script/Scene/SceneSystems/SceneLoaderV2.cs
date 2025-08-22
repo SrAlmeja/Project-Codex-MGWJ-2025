@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Linq;
 using System.Threading.Tasks;
 using Systems.SceneManagment;
@@ -23,7 +24,7 @@ namespace Systems.SceneManagement
         [SerializeField,Header("ScenesToLoad")]
         SceneGroup[]scenesToLoad;
         
-        public readonly SceneGroupManager Manager = new SceneGroupManager();
+        SceneGroupManager Manager;
         #endregion
 
         #region Unity Functions
@@ -31,41 +32,14 @@ namespace Systems.SceneManagement
         void Awake()
         {
             MakeMePersistent();
-            
-            Manager.OnSceneLoaded += sceneName => Debug.Log("Loaded" + sceneName);
-            Manager.OnSceneUnloaded += sceneName => Debug.Log("Unloaded" + sceneName);
-            Manager.OnSceneGroupLoaded += () => Debug.Log("Scene Group loaded");
+            Manager = new SceneGroupManager(this);
+            Manager.OnSceneGroupLoaded += OnGroupLoaded;
         }
         async void Start()
         {
-            if (scenesToLoad == null || scenesToLoad.Length == 0)
-            {
-                Debug.LogError("SceneLoaderV2: No hay grupos de escenas definidos.");
-                return;
-            }
-
-            var firstGroup = scenesToLoad[0];
-            if (firstGroup == null || firstGroup.Scenes == null || firstGroup.Scenes.Count == 0)
-            {
-                /*Debug.LogError("SceneLoaderV2: El primer grupo está vacío o mal configurado.");
-                return;*/
-                LoadSceneGroup(0).Forget();
-            }
-
-            Debug.Log($"SceneLoaderV2: Cargando grupo inicial '{firstGroup.GroupName}'...");
-            await LoadSceneGroup(0);
+            if (scenesToLoad != null && scenesToLoad.Length > 0) StartCoroutine(LoadSceneGroupCoroutine(0));
         }
-
-        private void Update()
-        {
-            if (!_isLoading)
-            {
-                float currentFillAmount = loadingBar.fillAmount;
-                float progressDifference = Mathf.Abs(currentFillAmount - _targetProgress);
-                
-                float dynamicFillSpeed = progressDifference * fillSpeed;
-            }
-        }
+        
         private void MakeMePersistent()
         {
             if (Instance != null && Instance != this)
@@ -81,45 +55,40 @@ namespace Systems.SceneManagement
         #endregion
         
         #region LoaderFunctions
-        public async Task LoadSceneGroup(int index)
+        public void LoadSceneGroupByName(string groupName)
         {
-            loadingBar.fillAmount = 0f;
-            _targetProgress = 1f;
-            
-            if (index < 0 || index >= scenesToLoad.Length)
+            int idx = Array.FindIndex(scenesToLoad, g => g.GroupName == groupName);
+            if (idx < 0)
             {
-                Debug.LogError("Invalid scene group index." + index);
+                Debug.LogError($"SceneLoaderV2: The SceneGroup '{groupName}' was not found)");
                 return;
             }
-            
-            LoadingProgress progress = new LoadingProgress();
-            progress.Progressed += target => _targetProgress = Mathf.Max(target, _targetProgress);
-            
-            EnableLoadingCanvas();
-            await Manager.LoadScenes(scenesToLoad[index], progress);
-            EnableLoadingCanvas(false);
+
+            StartCoroutine(LoadSceneGroupCoroutine(idx));
         }
 
-        public async Task LoadSceneGroupByName(string groupName)
+        private IEnumerator LoadSceneGroupCoroutine(int index)
         {
-            var group = scenesToLoad.FirstOrDefault(g => g.GroupName == groupName);
-            if (group == null)
-            {
-                Debug.LogError($"SceneGroup '{groupName}' not found");
-            }
-            int index = Array.IndexOf(scenesToLoad, group);
-            if (index < 0)
-            {
-                Debug.LogError($"SceneGroup '{groupName}' no se encuentra en el arrya de SceneToLoad");
-                return;
-            }
-            await LoadSceneGroup(index);
+            loadingBar.fillAmount = 0;
+            _targetProgress = 0;
+            EnableLoadingCanvas(true);;
+
+            var progress = new LoadingProgress();
+            progress.Progressed += p => _targetProgress = MathF.Max(_targetProgress, p);
+            
+            yield return StartCoroutine(Manager.LoadSceneCoroutine(scenesToLoad[index], progress));
         }
         void EnableLoadingCanvas(bool enable = true)
         {
             _isLoading = enable;
             loadingCanvas.gameObject.SetActive(enable);
             loadingCamera.gameObject.SetActive(enable);
+        }
+
+        private void OnGroupLoaded()
+        {
+            EnableLoadingCanvas(false);
+            Debug.Log("SceneLoaderV2: SceneGroup loaded (event).");
         }
         #endregion
     }

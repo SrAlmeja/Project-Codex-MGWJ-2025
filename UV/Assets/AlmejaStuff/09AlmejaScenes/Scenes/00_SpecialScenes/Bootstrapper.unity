@@ -706,6 +706,28 @@ MonoBehaviour:
         asset: {fileID: 102900000, guid: fc53ce3c54dc7134ba36e76a55385729, type: 3}
         guid: fc53ce3c54dc7134ba36e76a55385729
       SceneType: 6
+  - GroupName: TestGroup
+    Scenes:
+    - Reference:
+        asset: {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
+        guid: 9fc0d4010bbf28b4594072e72b8655ab
+      SceneType: 0
+    - Reference:
+        asset: {fileID: 102900000, guid: 4a0d83d093f92a24fb4da849fb25161d, type: 3}
+        guid: 4a0d83d093f92a24fb4da849fb25161d
+      SceneType: 1
+    - Reference:
+        asset: {fileID: 102900000, guid: 3b7c8ba0878da5e4baa2af15965cdde6, type: 3}
+        guid: 3b7c8ba0878da5e4baa2af15965cdde6
+      SceneType: 6
+    - Reference:
+        asset: {fileID: 102900000, guid: 788adea43110dc644ba8e6c3e3dc2336, type: 3}
+        guid: 788adea43110dc644ba8e6c3e3dc2336
+      SceneType: 6
+    - Reference:
+        asset: {fileID: 102900000, guid: 81871c446290f03498749fb7b6de31e2, type: 3}
+        guid: 81871c446290f03498749fb7b6de31e2
+      SceneType: 6
 --- !u!4 &1221533417
 Transform:
   m_ObjectHideFlags: 0
