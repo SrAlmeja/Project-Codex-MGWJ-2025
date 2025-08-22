@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SceneController : MonoBehaviour
 {
-
     #region Singleton
     public static SceneController Instance { get; private set; }
 

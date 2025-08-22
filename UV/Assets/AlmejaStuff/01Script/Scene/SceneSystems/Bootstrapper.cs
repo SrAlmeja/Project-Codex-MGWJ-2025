@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Threading.Tasks;
 
 public class Bootstrapper : PersistentSingleton<Bootstrapper>
 {
@@ -10,7 +9,6 @@ public class Bootstrapper : PersistentSingleton<Bootstrapper>
         Debug.Log("Bootstrapper...");
         LoadBootstrapperScene();
     }
-
     static async void LoadBootstrapperScene()
     {
         if (SceneManager.GetActiveScene().name == "Bootstrapper") return;

@@ -9,6 +9,22 @@ namespace Systems.SceneManagment
 {
     public class SceneGroupManager
     {
+        #region Variables
+        
+        private string _activeName;
+        private int _total;
+        private int _doneCount;
+        private float _overall;
+
+        private List<string> _toUnload;
+        private string _active;
+        private int _count;
+        #endregion
+        
+        #region Dependencies
+        private readonly MonoBehaviour managerOwner;
+        #endregion
+
         #region Actions and Events
         public event Action<string> OnSceneLoaded = delegate { };
         public event Action<string> OnSceneUnloaded = delegate { };
@@ -23,8 +39,8 @@ namespace Systems.SceneManagment
             ActiveSceneGroup = sGroup;
             yield return managerOwner.StartCoroutine(UnloadScenesCoroutine());
             
-            int total = ActiveSceneGroup.Scenes.Count;
-            int doneCount = 0;
+            _total = ActiveSceneGroup.Scenes.Count;
+            _doneCount = 0;
             
             foreach (var sceneData in sGroup.Scenes)
             {
@@ -40,18 +56,18 @@ namespace Systems.SceneManagment
 
                 while (!op.isDone)
                 {
-                    float overall = (doneCount + op.progress) / (float)total;
-                    progress?.Report(overall);
+                    _overall = (_doneCount + op.progress) / (float)_total;
+                    progress?.Report(_overall);
                     yield return null;
                 }
-                doneCount++;
+                _doneCount++;
                 OnSceneLoaded(sceneData.Name);
                 Debug.Log($"SceneGroupManager: Scene '{sceneData.Name}' loaded.");
             }
 
-            string activeName = ActiveSceneGroup.FindSceneNameByType(SceneType.ActiveScene);
-            var sc = SceneManager.GetSceneByName(activeName);
-            if(sc.IsValid()) SceneManager.SetActiveScene(sc);
+            _activeName = ActiveSceneGroup.FindSceneNameByType(SceneType.ActiveScene);
+            var s = SceneManager.GetSceneByName(_activeName);
+            if(s.IsValid()) SceneManager.SetActiveScene(s);
             
             OnSceneGroupLoaded();
             Debug.Log($"SceneGroupManager: SceneGroup '{sGroup.GroupName}' complete loaded.");
@@ -59,21 +75,21 @@ namespace Systems.SceneManagment
 
         public IEnumerator UnloadScenesCoroutine()
         {
-            var toUnload = new List<string>();
-            string active = SceneManager.GetActiveScene().name;
-            int count = SceneManager.sceneCount;
+            _toUnload = new List<string>();
+            _active = SceneManager.GetActiveScene().name;
+            _count = SceneManager.sceneCount;
 
-            for (int i = count - 1; i > 0; i--)
+            for (int i = _count - 1; i > 0; i--)
             {
                 var s = SceneManager.GetSceneAt(i);
                 if (!s.isLoaded) continue;
                 
-                if (s.name == active || s.name == "Bootstrapper" || s.name == "PersistantPlayer" || s.name == "UI") continue;
+                if (s.name == _active || s.name == "Bootstrapper" || s.name == "PersistantPlayer" || s.name == "UI") continue;
                 
-                toUnload.Add(s.name);
+                _toUnload.Add(s.name);
             }
 
-            foreach (var name in toUnload)
+            foreach (var name in _toUnload)
             {
                 Debug.Log($"SceneGroupManager: Unloading scene '{name}'...");
                 var op = SceneManager.UnloadSceneAsync(name);
@@ -82,8 +98,6 @@ namespace Systems.SceneManagment
                 Debug.Log($"SceneGroupManager: Scene '{name}' unloaded.");
             }
         }
-        
-        MonoBehaviour managerOwner;
         public SceneGroupManager(MonoBehaviour owner) => managerOwner = owner;
     }
 

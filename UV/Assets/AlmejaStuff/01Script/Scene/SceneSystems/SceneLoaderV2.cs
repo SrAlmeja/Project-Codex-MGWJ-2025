@@ -1,7 +1,5 @@
 using System;
 using System.Collections;
-using System.Linq;
-using System.Threading.Tasks;
 using Systems.SceneManagment;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,21 +8,24 @@ namespace Systems.SceneManagement
 {
     public class SceneLoaderV2 : MonoBehaviour
     {
-        #region Loading Variables
-        [HideInInspector] public static SceneLoaderV2 Instance {get; private set;}
-        [SerializeField, Header("Loading Stuff")]
-        private Image loadingBar;
+        #region Singleton
+        public static SceneLoaderV2 Instance { get; private set; }
+        #endregion
+
+        #region Serialized Fields
+        [SerializeField, Header("Loading Stuff")] private Image loadingBar;
         [SerializeField] private float fillSpeed = 0.5f;
         [SerializeField] private Canvas loadingCanvas;
         [SerializeField] private Camera loadingCamera;
+        [SerializeField, Header("Scenes Reference")] private SceneGroup[] scenesToLoad;
+        #endregion
 
+        #region Internal State
+        private LoadingProgress _progress;
         private float _targetProgress;
         private bool _isLoading;
-        
-        [SerializeField,Header("ScenesToLoad")]
-        SceneGroup[]scenesToLoad;
-        
-        SceneGroupManager Manager;
+        private int _idx;
+        private SceneGroupManager Manager;
         #endregion
 
         #region Unity Functions
@@ -35,11 +36,14 @@ namespace Systems.SceneManagement
             Manager = new SceneGroupManager(this);
             Manager.OnSceneGroupLoaded += OnGroupLoaded;
         }
-        async void Start()
+        void Start()
         {
-            if (scenesToLoad != null && scenesToLoad.Length > 0) StartCoroutine(LoadSceneGroupCoroutine(0));
+            if (scenesToLoad == null || scenesToLoad.Length == 0 || scenesToLoad[0] == null)
+            {
+                Debug.LogWarning("SceneLoaderV2: No hay escenas definidas para cargar.");
+                return;
+            }
         }
-        
         private void MakeMePersistent()
         {
             if (Instance != null && Instance != this)
@@ -57,14 +61,14 @@ namespace Systems.SceneManagement
         #region LoaderFunctions
         public void LoadSceneGroupByName(string groupName)
         {
-            int idx = Array.FindIndex(scenesToLoad, g => g.GroupName == groupName);
-            if (idx < 0)
+            _idx = Array.FindIndex(scenesToLoad, g => g.GroupName == groupName);
+            if (_idx < 0)
             {
                 Debug.LogError($"SceneLoaderV2: The SceneGroup '{groupName}' was not found)");
                 return;
             }
 
-            StartCoroutine(LoadSceneGroupCoroutine(idx));
+            StartCoroutine(LoadSceneGroupCoroutine(_idx));
         }
 
         private IEnumerator LoadSceneGroupCoroutine(int index)
@@ -73,10 +77,10 @@ namespace Systems.SceneManagement
             _targetProgress = 0;
             EnableLoadingCanvas(true);;
 
-            var progress = new LoadingProgress();
-            progress.Progressed += p => _targetProgress = MathF.Max(_targetProgress, p);
+            _progress = new LoadingProgress();
+            _progress.Progressed += p => _targetProgress = MathF.Max(_targetProgress, p);
             
-            yield return StartCoroutine(Manager.LoadSceneCoroutine(scenesToLoad[index], progress));
+            yield return StartCoroutine(Manager.LoadSceneCoroutine(scenesToLoad[index], _progress));
         }
         void EnableLoadingCanvas(bool enable = true)
         {
@@ -84,7 +88,6 @@ namespace Systems.SceneManagement
             loadingCanvas.gameObject.SetActive(enable);
             loadingCamera.gameObject.SetActive(enable);
         }
-
         private void OnGroupLoaded()
         {
             EnableLoadingCanvas(false);
@@ -94,9 +97,8 @@ namespace Systems.SceneManagement
     }
 
     public class LoadingProgress : IProgress<float>
-    {
+    { 
         public event Action<float> Progressed;
-        
         const float ratio = 1f;
 
         public void Report(float value)
