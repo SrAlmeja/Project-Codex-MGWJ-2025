@@ -67,7 +67,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -139,7 +139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4615354999416819234, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_Mass
-      value: 0.5085642
+      value: 0.47094607
       objectReference: {fileID: 0}
     - target: {fileID: 5207936491410336040, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_Size.x
@@ -173,6 +173,18 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 33548f6ca4525d94194c59d89ebbaa4a, type: 2}
+    - target: {fileID: 8407845896195889890, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
+      propertyPath: unArmed
+      value: 
+      objectReference: {fileID: 11400000, guid: 84a300f7738da1e499dc07a32d44575b, type: 2}
+    - target: {fileID: 8407845896195889890, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
+      propertyPath: attackEfect
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8407845896195889890, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
+      propertyPath: movementSpeed
+      value: 5.07
+      objectReference: {fileID: 0}
     - target: {fileID: 8785346275031686959, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -226,7 +238,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4602187636330037392, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}

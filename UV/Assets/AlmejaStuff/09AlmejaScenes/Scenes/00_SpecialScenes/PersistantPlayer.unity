@@ -170,10 +170,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1504746177106453068, guid: f49b420c641157846a213e39ddd1c054, type: 3}
-      propertyPath: orthographic
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8573046835717672958, guid: f49b420c641157846a213e39ddd1c054, type: 3}
       propertyPath: m_Name
       value: Fraile

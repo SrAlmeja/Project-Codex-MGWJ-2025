@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
@@ -12,12 +13,22 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _moveDirection;
 
     [Header("Attack"), SerializeField] private GameObject attackEfect;
-    [Header("Animation"), SerializeField] private Animator playerAnimator, attackEAnimator;
+
+    [SerializeField] private BallAttack ballAttack;
+    //[SerializeField] private GameObject pelota;
+    [SerializeField] private SOBoolean unArmed;
+    
+    [Header("Animation"), SerializeField] private Animator playerAnimator/*, attackEAnimator*/;
     private Vector3 _playerRotation;
     
     #endregion
     
     #region UnityFunctions
+
+    private void Start()
+    {
+        unArmed.Value = false;
+    }
 
     private void Update()
     {
@@ -58,11 +69,30 @@ public class PlayerMovement : MonoBehaviour
         player.transform.eulerAngles = _playerRotation;
     }
     
+    #endregion
+    
+    #region AttackFunctions
+    
     private void Attack(InputAction.CallbackContext context)
     {
         playerAnimator.Play("Player Punch");
-        attackEAnimator.SetTrigger("IsAttacking");
+        //attackEAnimator.SetTrigger("IsAttacking");
+        HitBall();
     }
-    
+
+    private void HitBall()
+    {
+        if (unArmed.Value == false)
+        {
+            ballAttack.TrowBall(_moveDirection, player.transform.position);
+            unArmed.Value = true;
+        }
+        else
+        {
+            print("No hay pelota que patear");
+        }
+
+        
+    }
     #endregion
 }
