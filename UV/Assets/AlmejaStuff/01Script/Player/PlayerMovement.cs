@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     
     [Header("Movement"), SerializeField] private Rigidbody2D playerRB;
     [SerializeField] private float movementSpeed;
-    [SerializeField] private InputActionReference move, attack;
+    [SerializeField] private InputActionReference move, interact, attack;
     private Vector2 _moveDirection;
 
     [Header("Attack"), SerializeField] private GameObject attackEfect;
@@ -43,11 +43,13 @@ public class PlayerMovement : MonoBehaviour
     private void OnEnable()
     {
         attack.action.started += Attack;
+        interact.action.started += Interact;
     }
 
     private void OnDisable()
     {
         attack.action.started -= Attack;
+        interact.action.started -= Interact;
     }
     
     #endregion
@@ -72,6 +74,11 @@ public class PlayerMovement : MonoBehaviour
     #endregion
     
     #region AttackFunctions
+
+    private void Interact(InputAction.CallbackContext context)
+    {
+        Debug.Log("Interact");
+    }
     
     private void Attack(InputAction.CallbackContext context)
     {
