@@ -687,7 +687,7 @@ MonoBehaviour:
     - Reference:
         asset: {fileID: 102900000, guid: 3b65643ff5ee6164abe3461cfd61d9b4, type: 3}
         guid: 3b65643ff5ee6164abe3461cfd61d9b4
-      SceneType: 0
+      SceneType: 2
   - GroupName: Church
     Scenes:
     - Reference:

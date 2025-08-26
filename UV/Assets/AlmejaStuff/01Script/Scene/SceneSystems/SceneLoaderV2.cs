@@ -43,6 +43,7 @@ namespace Systems.SceneManagement
                 Debug.LogWarning("SceneLoaderV2: No hay escenas definidas para cargar.");
                 return;
             }
+            LoadSceneGroupByName(scenesToLoad[0].GroupName);
         }
         private void MakeMePersistent()
         {

@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3144829667012809247
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3560147054142994662}
+  m_Layer: 0
+  m_Name: Controllers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3560147054142994662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3144829667012809247}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 381818178580611046}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8573046835717672958
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +42,7 @@ GameObject:
   - component: {fileID: 381818178580611046}
   m_Layer: 0
   m_Name: Fraile
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,6 +61,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2342693127181296019}
+  - {fileID: 3560147054142994662}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6442745747861634748
@@ -64,6 +96,46 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.17441115
       objectReference: {fileID: 0}
+    - target: {fileID: 5681675154964134505, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681675154964134505, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionId
+      value: 85f45f40-aa58-456a-af7b-6eecff971ad0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681675154964134505, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
+      value: d93e9471-33e9-4459-b721-c875ec174b0c
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681675154964134505, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
+      value: 6584668c-7a8e-4c06-867d-f517fbde9659
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681675154964134505, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionName
+      value: Gamplay/Attack[/Keyboard/space]
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681675154964134505, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
+      value: Gamplay/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681675154964134505, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
+      value: Gamplay/Interact[/Keyboard/e]
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681675154964134505, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681675154964134505, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681675154964134505, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5721320868696051497, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_FlipX
       value: 0
@@ -72,6 +144,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1341832856, guid: 28c28b47bdceb8748b5f5b9dee0b006c, type: 3}
+    - target: {fileID: 5721320868696051497, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5721320868696051497, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -84,6 +160,10 @@ PrefabInstance:
       propertyPath: unArmed
       value: 
       objectReference: {fileID: 11400000, guid: 84a300f7738da1e499dc07a32d44575b, type: 2}
+    - target: {fileID: 8407845896195889890, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
+      propertyPath: interact
+      value: 
+      objectReference: {fileID: 9070688943521127902, guid: 3d99967c6351f6c40b2885e51a16f967, type: 3}
     - target: {fileID: 8407845896195889890, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: attackEfect
       value: 

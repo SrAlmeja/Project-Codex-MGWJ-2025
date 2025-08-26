@@ -12,6 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e13e01f58019a4b14b8aab03af3f6763, type: 3}
   m_Name: ChurchDialoge
   m_EditorClassIdentifier: 
-  leftCharacter: {fileID: 0}
-  rightCharacter: {fileID: 0}
-  sentences: []
+  leftCharacter: {fileID: 11400000, guid: cc5b5a8b9ee32954593050065091b92e, type: 2}
+  rightCharacter: {fileID: 11400000, guid: 08f2a1e5a56fbcb4b8917c86cd3b5f69, type: 2}
+  sentences:
+  - character: {fileID: 11400000, guid: 08f2a1e5a56fbcb4b8917c86cd3b5f69, type: 2}
+    text: si
+  - character: {fileID: 11400000, guid: cc5b5a8b9ee32954593050065091b92e, type: 2}
+    text: apoco si
+  - character: {fileID: 11400000, guid: 08f2a1e5a56fbcb4b8917c86cd3b5f69, type: 2}
+    text: pos is
+  - character: {fileID: 11400000, guid: cc5b5a8b9ee32954593050065091b92e, type: 2}
+    text: bueno
+  - character: {fileID: 11400000, guid: 08f2a1e5a56fbcb4b8917c86cd3b5f69, type: 2}
+    text: pues bueno
+  - character: {fileID: 11400000, guid: cc5b5a8b9ee32954593050065091b92e, type: 2}
+    text: pos ya
+  - character: {fileID: 11400000, guid: 08f2a1e5a56fbcb4b8917c86cd3b5f69, type: 2}
+    text: pues adios
+  - character: {fileID: 11400000, guid: cc5b5a8b9ee32954593050065091b92e, type: 2}
+    text: adios
+  - character: {fileID: 11400000, guid: 08f2a1e5a56fbcb4b8917c86cd3b5f69, type: 2}
+    text: ADIOS
+  - character: {fileID: 11400000, guid: cc5b5a8b9ee32954593050065091b92e, type: 2}
+    text: YA LARGO
