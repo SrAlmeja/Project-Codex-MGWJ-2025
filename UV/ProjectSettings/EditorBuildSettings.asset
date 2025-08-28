@@ -6,114 +6,39 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/PersistantPlayer.unity
+    path: Assets/AlmejaStuff/09AlmejaScenes/Scenes/00_SpecialScenes/Bootstrapper.unity
+    guid: 9bae6c4b74c375344a24340ddc540830
+  - enabled: 1
+    path: Assets/AlmejaStuff/09AlmejaScenes/Scenes/00_UI/00MainMenu.unity
+    guid: 3b65643ff5ee6164abe3461cfd61d9b4
+  - enabled: 1
+    path: Assets/AlmejaStuff/09AlmejaScenes/Scenes/00_SpecialScenes/PersistantPlayer.unity
     guid: eb5dab6aa5aa3d3459d879058dfc45ab
   - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 0/00Panel00.unity
+    path: Assets/AlmejaStuff/09AlmejaScenes/Scenes/01_Iglesia/01_Cuarto.unity
+    guid: c63554b6e97513742aab1fa6f4b3db2d
+  - enabled: 1
+    path: Assets/AlmejaStuff/09AlmejaScenes/Scenes/01_Iglesia/02_Pasillo.unity
+    guid: 1a934700803cbef4ba1e13cc8508c61d
+  - enabled: 1
+    path: Assets/AlmejaStuff/09AlmejaScenes/Scenes/01_Iglesia/03_CuartoLibro.unity
+    guid: fc53ce3c54dc7134ba36e76a55385729
+  - enabled: 1
+    path: Assets/AlmejaStuff/09AlmejaScenes/Scenes/00_SpecialScenes/Credits.unity
+    guid: 33a43b27819285c4fb873045a23202cf
+  - enabled: 1
+    path: Assets/AlmejaStuff/09AlmejaScenes/Scenes/03_Mundo 1/00Panel00.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 0/01Panel10.unity
+    path: Assets/AlmejaStuff/09AlmejaScenes/Scenes/03_Mundo 1/01Panel10.unity
     guid: 4a0d83d093f92a24fb4da849fb25161d
   - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 0/02Panel20.unity
+    path: Assets/AlmejaStuff/09AlmejaScenes/Scenes/03_Mundo 1/02Panel20.unity
     guid: 3b7c8ba0878da5e4baa2af15965cdde6
   - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 0/03Panel30.unity
+    path: Assets/AlmejaStuff/09AlmejaScenes/Scenes/03_Mundo 1/03Panel30.unity
     guid: 788adea43110dc644ba8e6c3e3dc2336
   - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 0/04Panel40.unity
+    path: Assets/AlmejaStuff/09AlmejaScenes/Scenes/03_Mundo 1/04Panel40.unity
     guid: 81871c446290f03498749fb7b6de31e2
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 0/05Panel50.unity
-    guid: 59a2bd80637bed54f92f0c31bb73b0f5
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 1/06Panel01.unity
-    guid: 125b42ee36639c243ae7f7debaad63ca
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 1/07Panel11.unity
-    guid: a55a262c9d7c10a4e86ecaa5adc1628d
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 1/08Panel21.unity
-    guid: f56bbd22c94d09f42b91d4deb9abd256
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 1/09Panel31.unity
-    guid: 7c195985d7acb024a9b70e78309b55cd
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 1/10Panel41.unity
-    guid: 979271daa8088a34f9f6527cc570cac7
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 1/11Panel51.unity
-    guid: 53d121d2f8388654799cf586eb815648
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 2/12Panel02.unity
-    guid: 7c604eae63f4b9546842520aadf621b4
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 2/13Panel12.unity
-    guid: 66c8869599f18c24cbd202d4f26dc5bf
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 2/14Panel22.unity
-    guid: 01a9c0984cce79247a8477fb37c40864
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 2/15Panel32.unity
-    guid: 61c34ed5c285016488fb282fe7400cf9
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 2/16Panel42.unity
-    guid: 929a62d96713f954cb8183ec7de92a01
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 2/17Panel52.unity
-    guid: f82dd4ef97452ef438af579f844ed191
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 3/18Panel03.unity
-    guid: b90cf43d17fc85245892795b1cb49750
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 3/19Panel13.unity
-    guid: 6db1786a514b0f54a99f8f79b5891e7b
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 3/20Panel23.unity
-    guid: 25480561b8ac02247ac3ae2109f7e64b
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 3/21Panel33.unity
-    guid: 140ca70ce07d0624d9291a06b7a1706c
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 3/22Panel53.unity
-    guid: 998b73d53441b6f4999fc7e1286968dd
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 3/23Panel43.unity
-    guid: 3495c6da091dfd94b8f2a9be9601d57e
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 4/24Panel04.unity
-    guid: 90fd43d3e31ce444b8a790bc0111b4f8
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 4/25Panel14.unity
-    guid: f23ce0c61b07c9641afaedee810f4671
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 4/26Panel24.unity
-    guid: 0c691da567aa6244faf9f86445e8fa72
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 4/27Panel34.unity
-    guid: 52afcd0878e4fd3439f28eb78be50978
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 4/28Panel44.unity
-    guid: e100de0b43aa61c4b978fc50c631ad84
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 4/29Panel54.unity
-    guid: 5d9e26aa8e0d38d48a6c102ab4c7a8f3
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 5/30Panel05.unity
-    guid: c46c927a65a7d5644adcc29feeb8844d
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 5/31Panel15.unity
-    guid: 5e32317532bd0754a8af0dfcd62a0543
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 5/32Panel25.unity
-    guid: b430ec88b1838cc40b55172e795a3e6e
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 5/33Panel35.unity
-    guid: a1a67aa039cf8334ea59e6262fa464f2
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 5/34Panel45.unity
-    guid: 6fb3b777500fc414b89ff77b39e9b7b2
-  - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Fila 5/35Panel55.unity
-    guid: 695539a63ac44db438382c817ee0f7f0
   m_configObjects: {}

@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Interactable
+  - Wall
+  - Enemy
+  - BulletBall
+  - ViCam
+  - SceneElements
   layers:
   - Default
   - TransparentFX
@@ -14,7 +19,7 @@ TagManager:
   - UI
   - Player
   - Interaction
-  - 
+  - BulletBall
   - 
   - 
   - 

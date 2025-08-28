@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
@@ -8,16 +9,26 @@ public class PlayerMovement : MonoBehaviour
     
     [Header("Movement"), SerializeField] private Rigidbody2D playerRB;
     [SerializeField] private float movementSpeed;
-    [SerializeField] private InputActionReference move, attack;
+    [SerializeField] private InputActionReference move, interact, attack;
     private Vector2 _moveDirection;
 
     [Header("Attack"), SerializeField] private GameObject attackEfect;
-    [Header("Animation"), SerializeField] private Animator playerAnimator, attackEAnimator;
+
+    [SerializeField] private BallAttack ballAttack;
+    //[SerializeField] private GameObject pelota;
+    [SerializeField] private SOBoolean unArmed;
+    
+    [Header("Animation"), SerializeField] private Animator playerAnimator/*, attackEAnimator*/;
     private Vector3 _playerRotation;
     
     #endregion
     
     #region UnityFunctions
+
+    private void Start()
+    {
+        unArmed.Value = false;
+    }
 
     private void Update()
     {
@@ -32,11 +43,13 @@ public class PlayerMovement : MonoBehaviour
     private void OnEnable()
     {
         attack.action.started += Attack;
+        interact.action.started += Interact;
     }
 
     private void OnDisable()
     {
         attack.action.started -= Attack;
+        interact.action.started -= Interact;
     }
     
     #endregion
@@ -58,11 +71,35 @@ public class PlayerMovement : MonoBehaviour
         player.transform.eulerAngles = _playerRotation;
     }
     
+    #endregion
+    
+    #region AttackFunctions
+
+    private void Interact(InputAction.CallbackContext context)
+    {
+        Debug.Log("Interact");
+    }
+    
     private void Attack(InputAction.CallbackContext context)
     {
         playerAnimator.Play("Player Punch");
-        attackEAnimator.SetTrigger("IsAttacking");
+        //attackEAnimator.SetTrigger("IsAttacking");
+        HitBall();
     }
-    
+
+    private void HitBall()
+    {
+        if (unArmed.Value == false)
+        {
+            ballAttack.TrowBall(_moveDirection, player.transform.position);
+            unArmed.Value = true;
+        }
+        else
+        {
+            print("No hay pelota que patear");
+        }
+
+        
+    }
     #endregion
 }
