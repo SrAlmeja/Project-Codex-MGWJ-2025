@@ -13,13 +13,6 @@ public class ViCamFollow : MonoBehaviour
     private void OnEnable()
     {
         FindPlayer();
-        print("Ejecutado en enable");
-    }
-
-    void Start()
-    {
-        FindPlayer();
-        print("Ejecutado en start");
     }
     public void FindPlayer()
     {
@@ -33,13 +26,13 @@ public class ViCamFollow : MonoBehaviour
         player = null;
         while (player == null || !player.activeInHierarchy)
         {
-            print("Waiting for player");
+            //print("Waiting for player");
             player = GameObject.FindGameObjectWithTag("Player");
             yield return null;
         }
         
         _virtualCam.Follow = player.transform;
-        print("Player found" + player.name);
+        //print("Player found" + player.name);
     }
 
 }

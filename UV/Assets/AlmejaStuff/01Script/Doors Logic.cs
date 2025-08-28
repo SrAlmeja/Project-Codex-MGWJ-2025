@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,7 +36,10 @@ public class DoorsLogic : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
+        {
             _isOnArea = true;
+            _player = other.gameObject;    
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -61,12 +65,11 @@ public class DoorsLogic : MonoBehaviour
     {
         foreach (var obj in GetSceneElements(sceneToEnable))
             obj.SetActive(true);
-
         ViCamFollow camFollow = FindObjectOfType<ViCamFollow>();
         if (camFollow != null)
         {
             camFollow.FindPlayer();
-            Debug.Log("[DoorsLogic] Cámara encontrada y configurada.");
+            //Debug.Log("[DoorsLogic] Cámara encontrada y configurada.");
         }
         else
         {
@@ -81,7 +84,8 @@ public class DoorsLogic : MonoBehaviour
                 obj.SetActive(false);
         }
 
-        Debug.Log("[DoorsLogic] Objetos con tag 'SceneElements' desactivados en la escena a apagar.");
+        //Debug.Log("[DoorsLogic] Objetos con tag 'SceneElements' desactivados en la escena a apagar.");
+        //SkinChanger.Instance.TagReader(_player.transform);
     }
 
     private List<GameObject> GetSceneElements(SceneReference sceneRef)

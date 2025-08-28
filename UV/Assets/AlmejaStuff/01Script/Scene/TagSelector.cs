@@ -1,7 +1,6 @@
 using UnityEngine;
 
-public class TagSelector
-    : MonoBehaviour
+public class TagSelector : MonoBehaviour
 {
     [Header("Tag Selector")] [SerializeField] public PlayerType PlayerType;
 }
