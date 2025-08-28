@@ -139,23 +139,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4615354999416819234, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_Mass
-      value: 0.50848675
+      value: 0.40777996
       objectReference: {fileID: 0}
     - target: {fileID: 5207936491410336040, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_Size.x
-      value: 0.61575776
+      value: 0.52659094
       objectReference: {fileID: 0}
     - target: {fileID: 5207936491410336040, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_Size.y
-      value: 0.7648236
+      value: 0.7743771
       objectReference: {fileID: 0}
     - target: {fileID: 5207936491410336040, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_Offset.x
-      value: -0.007983893
+      value: 0.10665901
       objectReference: {fileID: 0}
     - target: {fileID: 5207936491410336040, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_Offset.y
-      value: -0.17441115
+      value: -0.0008544326
       objectReference: {fileID: 0}
     - target: {fileID: 5721320868696051497, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_FlipX
@@ -165,6 +165,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1800254566, guid: 28c28b47bdceb8748b5f5b9dee0b006c, type: 3}
+    - target: {fileID: 5721320868696051497, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8407845896195889890, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
+      propertyPath: attackEfect
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8407845896195889890, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: playerAnimator
       value: 
@@ -223,7 +231,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7384256632953147513, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4602187636330037392, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4921789303617179737, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}

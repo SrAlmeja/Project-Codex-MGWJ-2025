@@ -139,7 +139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4615354999416819234, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_Mass
-      value: 0.47094607
+      value: 0.85580766
       objectReference: {fileID: 0}
     - target: {fileID: 5207936491410336040, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_Size.x
@@ -147,7 +147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5207936491410336040, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_Size.y
-      value: 0.7648236
+      value: 1.3898447
       objectReference: {fileID: 0}
     - target: {fileID: 5207936491410336040, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_Offset.x
@@ -155,12 +155,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5207936491410336040, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_Offset.y
-      value: -0.17441115
+      value: -0.48692167
       objectReference: {fileID: 0}
     - target: {fileID: 5721320868696051497, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1879177004, guid: 6b36e6d57e0dc924a8f09caf22178cf9, type: 3}
+      objectReference: {fileID: 1863208747, guid: 6b36e6d57e0dc924a8f09caf22178cf9, type: 3}
+    - target: {fileID: 5721320868696051497, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8407845896195889890, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: attackEfect
       value: 

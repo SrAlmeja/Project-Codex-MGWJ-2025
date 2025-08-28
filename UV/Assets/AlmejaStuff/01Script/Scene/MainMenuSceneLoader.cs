@@ -8,11 +8,13 @@ public class MainMenuSceneLoader : MonoBehaviour
     private string sceneGroupName;
     [SerializeField] private int sceneGroupIndex;
     
+    #endregion
+    
     public void OnStartNGame()
     {
         Debug.Log($"[Menu] ▶ New Game: {sceneGroupName}");
         SceneLoaderV2.Instance.LoadSceneGroupByName(sceneGroupName);
     }
 
-    #endregion
+    
 }

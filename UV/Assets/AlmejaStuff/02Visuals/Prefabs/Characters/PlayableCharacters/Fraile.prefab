@@ -78,7 +78,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4615354999416819234, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_Mass
-      value: 0.47094607
+      value: 0.82468235
       objectReference: {fileID: 0}
     - target: {fileID: 5207936491410336040, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_Size.x
@@ -86,7 +86,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5207936491410336040, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_Size.y
-      value: 0.7648236
+      value: 1.3392967
       objectReference: {fileID: 0}
     - target: {fileID: 5207936491410336040, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_Offset.x
@@ -94,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5207936491410336040, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_Offset.y
-      value: -0.17441115
+      value: -0.31637865
       objectReference: {fileID: 0}
     - target: {fileID: 5681675154964134505, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: m_ActionEvents.Array.size

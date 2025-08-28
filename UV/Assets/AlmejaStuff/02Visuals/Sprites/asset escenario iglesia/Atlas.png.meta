@@ -745,7 +745,7 @@ TextureImporter:
         width: 1605
         height: 201
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -753,6 +753,27 @@ TextureImporter:
       bones: []
       spriteID: 00f7f0dd83ff42b4dbf4a23164e74539
       internalID: 1831386787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_3
+      rect:
+        serializedVersion: 2
+        x: 3681
+        y: 1814
+        width: 101
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0640d97c5606aec4bb7562c7fee11215
+      internalID: -621603059
       vertices: []
       indices: 
       edges: []

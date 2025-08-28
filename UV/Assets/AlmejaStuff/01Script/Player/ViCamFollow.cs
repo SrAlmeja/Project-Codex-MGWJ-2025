@@ -6,27 +6,40 @@ public class ViCamFollow : MonoBehaviour
 {
     [SerializeField] private GameObject viCam;
     private GameObject player;
-    private Transform _playerTransform;
     private CinemachineVirtualCamera _virtualCam;
 
-
-    private void Start()
+    public static ViCamFollow Instance { get; private set; }
+    
+    private void OnEnable()
     {
-        _virtualCam = viCam.GetComponent<CinemachineVirtualCamera>();
+        FindPlayer();
+        print("Ejecutado en enable");
+    }
+
+    void Start()
+    {
+        FindPlayer();
+        print("Ejecutado en start");
+    }
+    public void FindPlayer()
+    {
+        if (_virtualCam == null) _virtualCam = viCam.GetComponent<CinemachineVirtualCamera>();
+
         StartCoroutine(WaitForPlayerAndAssingCam());
     }
     
     private IEnumerator WaitForPlayerAndAssingCam()
     {
         player = null;
-
-        while (player == null)
+        while (player == null || !player.activeInHierarchy)
         {
+            print("Waiting for player");
             player = GameObject.FindGameObjectWithTag("Player");
             yield return null;
         }
-        _playerTransform = player.transform;
-        _virtualCam.Follow = _playerTransform;
+        
+        _virtualCam.Follow = player.transform;
+        print("Player found" + player.name);
     }
 
 }

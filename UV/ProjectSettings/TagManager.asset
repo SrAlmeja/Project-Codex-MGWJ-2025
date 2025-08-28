@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - BulletBall
   - ViCam
+  - SceneElements
   layers:
   - Default
   - TransparentFX
