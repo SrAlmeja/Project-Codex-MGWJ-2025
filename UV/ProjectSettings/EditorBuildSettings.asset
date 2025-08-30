@@ -43,10 +43,10 @@ EditorBuildSettings:
     path: Assets/AlmejaStuff/09AlmejaScenes/Scenes/03_Mundo 1/02CasaAbuela.unity
     guid: 4a0d83d093f92a24fb4da849fb25161d
   - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Scenes/03_Mundo 1/03Huerto.unity
+    path: Assets/AlmejaStuff/09AlmejaScenes/Scenes/03_Mundo 1/03HuertoGemelos.unity
     guid: 3b7c8ba0878da5e4baa2af15965cdde6
   - enabled: 1
-    path: Assets/AlmejaStuff/09AlmejaScenes/Scenes/03_Mundo 1/03HuertoGemelos.unity
+    path: Assets/AlmejaStuff/09AlmejaScenes/Scenes/03_Mundo 1/03HuertoIxquic.unity
     guid: 5e334537d4609504eae42225c711a673
   - enabled: 1
     path: "Assets/AlmejaStuff/09AlmejaScenes/Scenes/03_Mundo 1/04Secci\xF3nGemelos1.unity"
