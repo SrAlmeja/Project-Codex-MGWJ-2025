@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8423a1f517fd640e7a2c85dee4322861, type: 3}
-  m_Name: Church DialogeRequestGameEvent
+  m_Name: ConversationRequestGameEvent
   m_EditorClassIdentifier: 
   _debugValue: {fileID: 11400000, guid: 05bae82845c41c84f830412d8741cc83, type: 2}
