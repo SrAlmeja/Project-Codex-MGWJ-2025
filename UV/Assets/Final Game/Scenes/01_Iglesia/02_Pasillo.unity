@@ -5092,8 +5092,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8508f1cf4a0bb47f18b2ff8c108ea4aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conversation: {fileID: 11400000, guid: 05bae82845c41c84f830412d8741cc83, type: 2}
-  conversationRequestEvent: {fileID: 11400000, guid: ac7b41293b1f32b48a0a8e4039af78e5, type: 2}
+  conversation: {fileID: 11400000, guid: 7fd81aa10a6b7ac49918aa225aa60c46, type: 2}
+  conversationRequestEvent: {fileID: 11400000, guid: 39948954e3152b0458363a09a09159ce, type: 2}
 --- !u!114 &1776432580
 MonoBehaviour:
   m_ObjectHideFlags: 0
