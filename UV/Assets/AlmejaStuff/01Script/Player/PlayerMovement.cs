@@ -13,19 +13,16 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _moveDirection;
 
     [Header("Attack"), SerializeField] private GameObject attackEfect;
-
     [SerializeField] private BallAttack ballAttack;
-    //[SerializeField] private GameObject pelota;
     [SerializeField] private SOBoolean unArmed;
+    private bool _imWarrior;
+    private Vector2 _lastDirection = Vector2.right;
     
-    [Header("Animation"), SerializeField] private Animator playerAnimator/*, attackEAnimator*/;
+    #region Animation Variables
+    [Header("Animation"), SerializeField] private Animator playerAnimator;
     private Vector3 _playerRotation;
-
-    [Header("canInteract"), SerializeField]
-    public SOBoolean canInteract;
-
-    public NpcInteraction npcInteraction;
-
+    #endregion
+    
     #endregion
 
     #region UnityFunctions
@@ -33,16 +30,30 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         unArmed.Value = false;
+        if (ballAttack == null)
+        {
+            _imWarrior = false;
+        }
+        else
+        {
+            _imWarrior = true;
+        }
     }
 
     private void Update()
     {
         _moveDirection = move.action.ReadValue<Vector2>();
+        if (_moveDirection != Vector2.zero)
+        {
+            _lastDirection = _moveDirection.normalized;
+        }
+        
 
     }
     private void FixedUpdate()
     {
         Movement();
+        UpdateAniamtor();
     }
     
     private void OnEnable()
@@ -87,15 +98,13 @@ public class PlayerMovement : MonoBehaviour
         playerRB.MovePosition(playerRB.position + _moveDirection * movementSpeed * Time.fixedDeltaTime);
         if (_moveDirection.x < 0) _playerRotation = new Vector3(0, 180, 0);
         else if (_moveDirection.x > 0) _playerRotation = new Vector3(0, 0, 0);
-        if (_moveDirection.x == 0 & _moveDirection.y == 0) playerAnimator.ResetTrigger("Walking");
-        else playerAnimator.SetTrigger("Walking");
         
         player.transform.eulerAngles = _playerRotation;
     }
     
     #endregion
     
-    #region AttackFunctions
+    #region TriggersFunctions
 
     private void Interact(InputAction.CallbackContext context)
     {
@@ -108,16 +117,19 @@ public class PlayerMovement : MonoBehaviour
     
     private void Attack(InputAction.CallbackContext context)
     {
-        playerAnimator.Play("Player Punch");
-        //attackEAnimator.SetTrigger("IsAttacking");
-        HitBall();
+        if (_imWarrior == true)
+        {
+            playerAnimator.SetTrigger("Attack");
+            HitBall();
+            
+        }
     }
 
     private void HitBall()
     {
         if (unArmed.Value == false)
         {
-            ballAttack.TrowBall(_moveDirection, player.transform.position);
+            ballAttack.TrowBall(_lastDirection, player.transform.position);
             unArmed.Value = true;
         }
         else
@@ -127,5 +139,39 @@ public class PlayerMovement : MonoBehaviour
 
         
     }
+    #endregion
+    
+    #region AnimationFunctions
+
+    private void UpdateAniamtor()
+    {
+        playerAnimator.SetBool("Walking", false);
+        playerAnimator.SetBool("SideWalk", false);
+        playerAnimator.SetBool("UpWalk", false);
+        playerAnimator.SetBool("UpIddle", false);
+        
+        if (_moveDirection == Vector2.zero)
+        {
+            // El jugador está quieto, usamos la última dirección
+            if (_lastDirection.y > 0)
+                playerAnimator.SetBool("UpIddle", true);
+            else if (Mathf.Abs(_lastDirection.x) > 0)
+                playerAnimator.SetBool("SideWalk", true); // Puedes usar una idle lateral si tienes
+            else
+                playerAnimator.SetBool("Walking", true); // Idle hacia abajo
+        }
+        else
+        {
+            // El jugador se está moviendo
+            if (_moveDirection.y > 0)
+                playerAnimator.SetBool("UpWalk", true);
+            else if (Mathf.Abs(_moveDirection.x) > 0)
+                playerAnimator.SetBool("SideWalk", true);
+            else
+                playerAnimator.SetBool("Walking", true); // Movimiento hacia abajo
+        }
+    }
+
+    
     #endregion
 }
