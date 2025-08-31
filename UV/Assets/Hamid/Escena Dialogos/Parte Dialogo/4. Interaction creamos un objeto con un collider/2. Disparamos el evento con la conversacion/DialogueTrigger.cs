@@ -12,5 +12,6 @@ public class DialogueTrigger : MonoBehaviour
     public void TriggerConversation()
     {
         this.conversationRequestEvent.Raise(this.conversation);
+        Debug.Log("Ya se lanzó");
     }
 }

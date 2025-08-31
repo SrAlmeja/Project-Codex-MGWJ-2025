@@ -8,6 +8,7 @@ public class GameStateChanger : MonoBehaviour
     public void SetGameState(GameStateSO gameState)
     {
         this.gameManager.SetGameState(gameState);
+        Debug.Log(gameState.ToString());
     }
 
     public void RestorePreviousState()

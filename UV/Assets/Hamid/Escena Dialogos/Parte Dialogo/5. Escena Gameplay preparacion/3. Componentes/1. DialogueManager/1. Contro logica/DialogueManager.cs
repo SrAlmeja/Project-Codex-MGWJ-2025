@@ -20,6 +20,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartConversation(ConversationSO conversation)
     {
+        Debug.Log("Recibido, empezó la conversación");
         if (this.sentences.Count != 0)
             return;
 
