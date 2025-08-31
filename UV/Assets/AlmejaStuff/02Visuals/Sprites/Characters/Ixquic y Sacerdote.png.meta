@@ -484,6 +484,132 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Ixquic y Sacerdote_0
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 232
+        width: 106
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 057c4aca60c70b346a399352a0392f0a
+      internalID: -1297734574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ixquic y Sacerdote_1
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 237
+        width: 108
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e0f4217cdb48e140a5acc5a2ea5dbfd
+      internalID: -1648899968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ixquic y Sacerdote_2
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 559
+        width: 102
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 240b983ca90e508409065ae3d78f296f
+      internalID: 1792323437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ixquic y Sacerdote_3
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 233
+        width: 117
+        height: 202
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb49cb730920b604baa4f4543056251f
+      internalID: -2071315841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ixquic y Sacerdote_4
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 231
+        width: 102
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 994ece7c9f6c07f4e9eeff416ad45b6c
+      internalID: -1048451508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ixquic y Sacerdote_5
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 782
+        width: 122
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a15fd67e632fdee48a6b4c24b27e0e58
+      internalID: 578898087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -496,7 +622,13 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Ixquic: -550943972
+      Ixquic y Sacerdote_0: -1297734574
+      Ixquic y Sacerdote_1: -1648899968
       Ixquic y Sacerdote_12: -118810052
+      Ixquic y Sacerdote_2: 1792323437
+      Ixquic y Sacerdote_3: -2071315841
+      Ixquic y Sacerdote_4: -1048451508
+      Ixquic y Sacerdote_5: 578898087
       Ixquic y Sacerdote_6: 1944754939
       Ixquic_Front_Walk_1: 976656565
       Ixquic_Iddle_1: 480672207

@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &381818178580611046
 Transform:
   m_ObjectHideFlags: 0
@@ -81,6 +81,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: 6b4d00e1fd82c7f4f89b8b5e010273a4, type: 2}
     - target: {fileID: 8407845896195889890, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
+      propertyPath: interact
+      value: 
+      objectReference: {fileID: 9070688943521127902, guid: 3d99967c6351f6c40b2885e51a16f967, type: 3}
+    - target: {fileID: 8407845896195889890, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: attackEfect
       value: 
       objectReference: {fileID: 0}
@@ -140,10 +144,33 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 4602187636330037392, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1065544788086665945, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2394872574721046636}
   m_SourcePrefab: {fileID: 100100000, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
 --- !u!4 &2342693127181296019 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8785346275031686959, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
   m_PrefabInstance: {fileID: 6442745747861634748}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6314231711297162341 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1065544788086665945, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
+  m_PrefabInstance: {fileID: 6442745747861634748}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2394872574721046636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6314231711297162341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1325f673117345241bb55dc942dc105b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballDrop: {fileID: 4832259490639936888, guid: 32f104abdb95a9649ac86ca3a63691a7, type: 3}
+  ballRB: {fileID: 1623264887387614918, guid: 7f1d12a000022a34697bb8f8a11fda57, type: 3}
+  speed: 3
