@@ -13,10 +13,10 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _moveDirection;
 
     [Header("Attack"), SerializeField] private GameObject attackEfect;
-
     [SerializeField] private BallAttack ballAttack;
-    //[SerializeField] private GameObject pelota;
     [SerializeField] private SOBoolean unArmed;
+    private bool _imWarrior;
+    private Vector2 _lastDirection = Vector2.right;
     
     [Header("Animation"), SerializeField] private Animator playerAnimator/*, attackEAnimator*/;
     private Vector3 _playerRotation;
@@ -28,11 +28,23 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         unArmed.Value = false;
+        if (ballAttack == null)
+        {
+            _imWarrior = false;
+        }
+        else
+        {
+            _imWarrior = true;
+        }
     }
 
     private void Update()
     {
         _moveDirection = move.action.ReadValue<Vector2>();
+        if (_moveDirection != Vector2.zero)
+        {
+            _lastDirection = _moveDirection.normalized;
+        }
 
     }
     private void FixedUpdate()
@@ -73,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
     
     #endregion
     
-    #region AttackFunctions
+    #region TriggersFunctions
 
     private void Interact(InputAction.CallbackContext context)
     {
@@ -82,9 +94,12 @@ public class PlayerMovement : MonoBehaviour
     
     private void Attack(InputAction.CallbackContext context)
     {
-        playerAnimator.Play("Player Punch");
-        //attackEAnimator.SetTrigger("IsAttacking");
-        HitBall();
+        if (_imWarrior == true)
+        {
+            playerAnimator.SetTrigger("Attack");
+            HitBall();    
+        }
+        
     }
 
     private void HitBall()
