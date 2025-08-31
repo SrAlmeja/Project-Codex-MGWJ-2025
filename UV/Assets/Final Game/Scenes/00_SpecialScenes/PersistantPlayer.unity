@@ -369,10 +369,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3298763945200329822, guid: 08b9a3adf88306b4cb470c844aecc450, type: 3}
-      propertyPath: interact
-      value: 
-      objectReference: {fileID: 9070688943521127902, guid: 3d99967c6351f6c40b2885e51a16f967, type: 3}
+    - target: {fileID: 1829644473494368414, guid: 08b9a3adf88306b4cb470c844aecc450, type: 3}
+      propertyPath: m_Mass
+      value: 0.84809035
+      objectReference: {fileID: 0}
     - target: {fileID: 8573046835717672958, guid: 08b9a3adf88306b4cb470c844aecc450, type: 3}
       propertyPath: m_Name
       value: GemeloA
@@ -384,31 +384,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6314231711297162341, guid: 08b9a3adf88306b4cb470c844aecc450, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1121303664}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08b9a3adf88306b4cb470c844aecc450, type: 3}
---- !u!1 &1121303663 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6314231711297162341, guid: 08b9a3adf88306b4cb470c844aecc450, type: 3}
-  m_PrefabInstance: {fileID: 1121303662}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1121303664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1121303663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1325f673117345241bb55dc942dc105b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ballDrop: {fileID: 4832259490639936888, guid: 32f104abdb95a9649ac86ca3a63691a7, type: 3}
-  ballRB: {fileID: 1623264887387614918, guid: 7f1d12a000022a34697bb8f8a11fda57, type: 3}
-  speed: 3
 --- !u!1001 &1308694277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -457,46 +434,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3298763945200329822, guid: c55f3b0a284f4ad4ca7109e5e35bba37, type: 3}
-      propertyPath: interact
-      value: 
-      objectReference: {fileID: 9070688943521127902, guid: 3d99967c6351f6c40b2885e51a16f967, type: 3}
     - target: {fileID: 8573046835717672958, guid: c55f3b0a284f4ad4ca7109e5e35bba37, type: 3}
       propertyPath: m_Name
       value: GemeloB
       objectReference: {fileID: 0}
-    - target: {fileID: 8573046835717672958, guid: c55f3b0a284f4ad4ca7109e5e35bba37, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6314231711297162341, guid: c55f3b0a284f4ad4ca7109e5e35bba37, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1308694279}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c55f3b0a284f4ad4ca7109e5e35bba37, type: 3}
---- !u!1 &1308694278 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6314231711297162341, guid: c55f3b0a284f4ad4ca7109e5e35bba37, type: 3}
-  m_PrefabInstance: {fileID: 1308694277}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1308694279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1308694278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1325f673117345241bb55dc942dc105b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ballDrop: {fileID: 4832259490639936888, guid: 32f104abdb95a9649ac86ca3a63691a7, type: 3}
-  ballRB: {fileID: 1623264887387614918, guid: 7f1d12a000022a34697bb8f8a11fda57, type: 3}
-  speed: 3
 --- !u!1001 &1550275077
 PrefabInstance:
   m_ObjectHideFlags: 0

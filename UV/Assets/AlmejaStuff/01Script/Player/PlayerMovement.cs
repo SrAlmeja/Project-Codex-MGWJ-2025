@@ -18,8 +18,10 @@ public class PlayerMovement : MonoBehaviour
     private bool _imWarrior;
     private Vector2 _lastDirection = Vector2.right;
     
-    [Header("Animation"), SerializeField] private Animator playerAnimator/*, attackEAnimator*/;
+    #region Animation Variables
+    [Header("Animation"), SerializeField] private Animator playerAnimator;
     private Vector3 _playerRotation;
+    #endregion
     
     #endregion
     
@@ -45,11 +47,13 @@ public class PlayerMovement : MonoBehaviour
         {
             _lastDirection = _moveDirection.normalized;
         }
+        
 
     }
     private void FixedUpdate()
     {
         Movement();
+        UpdateAniamtor();
     }
     
     private void OnEnable()
@@ -77,8 +81,6 @@ public class PlayerMovement : MonoBehaviour
         playerRB.MovePosition(playerRB.position + _moveDirection * movementSpeed * Time.fixedDeltaTime);
         if (_moveDirection.x < 0) _playerRotation = new Vector3(0, 180, 0);
         else if (_moveDirection.x > 0) _playerRotation = new Vector3(0, 0, 0);
-        if (_moveDirection.x == 0 & _moveDirection.y == 0) playerAnimator.ResetTrigger("Walking");
-        else playerAnimator.SetTrigger("Walking");
         
         player.transform.eulerAngles = _playerRotation;
     }
@@ -116,5 +118,39 @@ public class PlayerMovement : MonoBehaviour
 
         
     }
+    #endregion
+    
+    #region AnimationFunctions
+
+    private void UpdateAniamtor()
+    {
+        playerAnimator.SetBool("Walking", false);
+        playerAnimator.SetBool("SideWalk", false);
+        playerAnimator.SetBool("UpWalk", false);
+        playerAnimator.SetBool("UpIddle", false);
+        
+        if (_moveDirection == Vector2.zero)
+        {
+            // El jugador está quieto, usamos la última dirección
+            if (_lastDirection.y > 0)
+                playerAnimator.SetBool("UpIddle", true);
+            else if (Mathf.Abs(_lastDirection.x) > 0)
+                playerAnimator.SetBool("SideWalk", true); // Puedes usar una idle lateral si tienes
+            else
+                playerAnimator.SetBool("Walking", true); // Idle hacia abajo
+        }
+        else
+        {
+            // El jugador se está moviendo
+            if (_moveDirection.y > 0)
+                playerAnimator.SetBool("UpWalk", true);
+            else if (Mathf.Abs(_moveDirection.x) > 0)
+                playerAnimator.SetBool("SideWalk", true);
+            else
+                playerAnimator.SetBool("Walking", true); // Movimiento hacia abajo
+        }
+    }
+
+    
     #endregion
 }
