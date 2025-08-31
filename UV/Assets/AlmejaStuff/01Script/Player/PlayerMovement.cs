@@ -97,16 +97,16 @@ public class PlayerMovement : MonoBehaviour
         if (_imWarrior == true)
         {
             playerAnimator.SetTrigger("Attack");
-            HitBall();    
+            HitBall();
+            
         }
-        
     }
 
     private void HitBall()
     {
         if (unArmed.Value == false)
         {
-            ballAttack.TrowBall(_moveDirection, player.transform.position);
+            ballAttack.TrowBall(_lastDirection, player.transform.position);
             unArmed.Value = true;
         }
         else

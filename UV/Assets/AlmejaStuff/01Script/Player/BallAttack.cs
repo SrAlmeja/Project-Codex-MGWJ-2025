@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class BallAttack : MonoBehaviour
@@ -5,13 +6,26 @@ public class BallAttack : MonoBehaviour
     [SerializeField] private GameObject ballDrop;
     [SerializeField] private Rigidbody2D ballRB;
     [SerializeField] private float speed;
+    private CircleCollider2D ballCollider;
+    private bool isOnPlayer;
     
     
     private void Awake()
     {
+        ballRB = GetComponent<Rigidbody2D>();
+        ballCollider = GetComponent<CircleCollider2D>();
         gameObject.SetActive(false);
-    }    
-    
+        isOnPlayer = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+         ballCollider.isTrigger = false;   
+        }
+    }
+
 
     public void TrowBall(Vector2 direction, Vector3 spawnPosition)
     {
