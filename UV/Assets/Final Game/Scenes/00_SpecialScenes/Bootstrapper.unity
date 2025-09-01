@@ -693,7 +693,7 @@ MonoBehaviour:
     - Reference:
         asset: {fileID: 102900000, guid: c63554b6e97513742aab1fa6f4b3db2d, type: 3}
         guid: c63554b6e97513742aab1fa6f4b3db2d
-      SceneType: 0
+      SceneType: 6
     - Reference:
         asset: {fileID: 102900000, guid: eb5dab6aa5aa3d3459d879058dfc45ab, type: 3}
         guid: eb5dab6aa5aa3d3459d879058dfc45ab
@@ -709,28 +709,26 @@ MonoBehaviour:
     - Reference:
         asset: {fileID: 102900000, guid: 36e24895adb4f444d9204461cf68b1e0, type: 3}
         guid: 36e24895adb4f444d9204461cf68b1e0
-      SceneType: 7
-  - GroupName: TestGroup
+      SceneType: 0
+  - GroupName: ChurchCinematic
     Scenes:
     - Reference:
-        asset: {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
-        guid: 9fc0d4010bbf28b4594072e72b8655ab
-      SceneType: 0
+        asset: {fileID: 102900000, guid: d6db28a008e55da4290d8071685c12a7, type: 3}
+        guid: d6db28a008e55da4290d8071685c12a7
+      SceneType: 5
+  - GroupName: Xibalba
+    Scenes:
     - Reference:
-        asset: {fileID: 102900000, guid: 4a0d83d093f92a24fb4da849fb25161d, type: 3}
-        guid: 4a0d83d093f92a24fb4da849fb25161d
-      SceneType: 1
+        asset: {fileID: 102900000, guid: 16abe520a642cd141b6799c98b7c7679, type: 3}
+        guid: 16abe520a642cd141b6799c98b7c7679
+      SceneType: 5
     - Reference:
-        asset: {fileID: 102900000, guid: 3b7c8ba0878da5e4baa2af15965cdde6, type: 3}
-        guid: 3b7c8ba0878da5e4baa2af15965cdde6
+        asset: {fileID: 102900000, guid: 3bddabcfe8d7d1947adfce4e8ebcab85, type: 3}
+        guid: 3bddabcfe8d7d1947adfce4e8ebcab85
       SceneType: 6
     - Reference:
-        asset: {fileID: 102900000, guid: 788adea43110dc644ba8e6c3e3dc2336, type: 3}
-        guid: 788adea43110dc644ba8e6c3e3dc2336
-      SceneType: 6
-    - Reference:
-        asset: {fileID: 102900000, guid: 81871c446290f03498749fb7b6de31e2, type: 3}
-        guid: 81871c446290f03498749fb7b6de31e2
+        asset: {fileID: 102900000, guid: d17df23ed8f77aa4f885c63af6a837e1, type: 3}
+        guid: d17df23ed8f77aa4f885c63af6a837e1
       SceneType: 6
 --- !u!4 &1221533417
 Transform:

@@ -743,6 +743,14 @@ PrefabInstance:
       value: Door
       objectReference: {fileID: 0}
     - target: {fileID: 5690084151996467341, guid: e6d5e8f43e72ca848b47ed99f9794f5d, type: 3}
+      propertyPath: noDoor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690084151996467341, guid: e6d5e8f43e72ca848b47ed99f9794f5d, type: 3}
+      propertyPath: sceneGroupName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690084151996467341, guid: e6d5e8f43e72ca848b47ed99f9794f5d, type: 3}
       propertyPath: sceneToDisable.guid
       value: fc53ce3c54dc7134ba36e76a55385729
       objectReference: {fileID: 0}
@@ -1311,11 +1319,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2831089118428862916, guid: 6f2e97460089f1048bdc01d63d8f4cc2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.29
+      value: -1.0699998
       objectReference: {fileID: 0}
     - target: {fileID: 2831089118428862916, guid: 6f2e97460089f1048bdc01d63d8f4cc2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16
+      value: 15.34
       objectReference: {fileID: 0}
     - target: {fileID: 2831089118428862916, guid: 6f2e97460089f1048bdc01d63d8f4cc2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3484,7 +3492,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ac60c72adb1b84d9302662f90e53dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsMissionComplete: {fileID: 0}
 --- !u!61 &856558917
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5006,7 +5013,7 @@ Transform:
   m_GameObject: {fileID: 1157908239}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.14, y: 18.44, z: 0}
+  m_LocalPosition: {x: -1.92, y: 17.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
