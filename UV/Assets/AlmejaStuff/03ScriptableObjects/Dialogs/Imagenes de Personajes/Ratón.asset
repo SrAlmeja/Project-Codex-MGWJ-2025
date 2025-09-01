@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c61ee22fc0fe4a6f811145e6e154565, type: 3}
-  m_Name: Francisco Ximenes
+  m_Name: "Rat\xF3n"
   m_EditorClassIdentifier: 
-  fullname: Francisco
-  portrait: {fileID: -1341832856, guid: 28c28b47bdceb8748b5f5b9dee0b006c, type: 3}
+  fullname: "Rat\xF3n"
+  portrait: {fileID: -1800254566, guid: 28c28b47bdceb8748b5f5b9dee0b006c, type: 3}

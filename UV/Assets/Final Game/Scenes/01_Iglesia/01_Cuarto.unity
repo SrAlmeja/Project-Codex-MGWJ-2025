@@ -1175,6 +1175,56 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &637071082
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 637071084}
+  - component: {fileID: 637071083}
+  m_Layer: 0
+  m_Name: DetectorPlumaGlobal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &637071083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637071082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96fec579649338b45a9712ea3aa74faf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerFlag: {fileID: 11400000, guid: 9778dc0a5c7aa7e459dad3618a15e218, type: 2}
+  targetSceneName: 01_Cuarto
+  targetObjectPath: Word (1)/Interactuables/pluma_01
+  ensureParentsActive: 0
+  completionFlag: {fileID: 11400000, guid: 9eec63714de666a4587e969212a176ea, type: 2}
+  runOnlyOnce: 1
+--- !u!4 &637071084
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637071082}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.044315748, y: 2.3724291, z: 0.23510145}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &730607745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,7 +1412,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1338862980
 Transform:
   m_ObjectHideFlags: 0
@@ -1487,7 +1537,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8508f1cf4a0bb47f18b2ff8c108ea4aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conversation: {fileID: 0}
+  conversations: []
+  nextIndex: 0
   conversationRequestEvent: {fileID: 11400000, guid: 39948954e3152b0458363a09a09159ce, type: 2}
 --- !u!114 &1338862984
 MonoBehaviour:
@@ -2538,3 +2589,4 @@ SceneRoots:
   - {fileID: 6987401924066627102}
   - {fileID: 1652447551}
   - {fileID: 215921019}
+  - {fileID: 637071084}
