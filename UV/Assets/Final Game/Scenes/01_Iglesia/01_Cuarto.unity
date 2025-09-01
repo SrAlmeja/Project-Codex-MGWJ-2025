@@ -241,6 +241,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3886950193483360482}
+  - {fileID: 856558915}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &386198913
@@ -1259,6 +1260,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470664308}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &856558914
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 856558915}
+  - component: {fileID: 856558916}
+  m_Layer: 0
+  m_Name: ChurchGameplayLogic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &856558915
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856558914}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 215921019}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &856558916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856558914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3584afd07447f44429ebb61160f368cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsMissionComplete: {fileID: 0}
+  ReadyToNextLevel: 0
+  specialObject: {fileID: 0}
 --- !u!1 &1098471209
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,7 +1410,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1338862980
 Transform:
   m_ObjectHideFlags: 0
@@ -1487,7 +1535,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8508f1cf4a0bb47f18b2ff8c108ea4aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conversation: {fileID: 0}
+  conversations: []
+  nextIndex: 0
   conversationRequestEvent: {fileID: 11400000, guid: 39948954e3152b0458363a09a09159ce, type: 2}
 --- !u!114 &1338862984
 MonoBehaviour:
