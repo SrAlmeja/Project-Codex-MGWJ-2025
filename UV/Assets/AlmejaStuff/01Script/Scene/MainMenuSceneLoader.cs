@@ -15,6 +15,4 @@ public class MainMenuSceneLoader : MonoBehaviour
         Debug.Log($"[Menu] ▶ New Game: {sceneGroupName}");
         SceneLoaderV2.Instance.LoadSceneGroupByName(sceneGroupName);
     }
-
-    
 }

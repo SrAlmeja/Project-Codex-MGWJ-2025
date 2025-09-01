@@ -24,6 +24,18 @@ EditorBuildSettings:
     path: Assets/Final Game/Scenes/01_Iglesia/03_CuartoLibro.unity
     guid: fc53ce3c54dc7134ba36e76a55385729
   - enabled: 1
+    path: Assets/Final Game/Scenes/01_Iglesia/04_ChurchCinematic.unity
+    guid: d6db28a008e55da4290d8071685c12a7
+  - enabled: 1
+    path: Assets/Final Game/Scenes/02_Ixquic/01_XibalbaDemo.unity
+    guid: 16abe520a642cd141b6799c98b7c7679
+  - enabled: 1
+    path: Assets/Final Game/Scenes/02_Ixquic/02_XibalbaDemo.unity
+    guid: 3bddabcfe8d7d1947adfce4e8ebcab85
+  - enabled: 1
+    path: Assets/Final Game/Scenes/02_Ixquic/03_XibalbaDemo.unity
+    guid: d17df23ed8f77aa4f885c63af6a837e1
+  - enabled: 1
     path: Assets/Final Game/Scenes/00_SpecialScenes/Credits.unity
     guid: 33a43b27819285c4fb873045a23202cf
   - enabled: 1

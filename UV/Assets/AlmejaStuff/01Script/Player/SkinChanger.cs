@@ -6,9 +6,10 @@ public class SkinChanger : PersistentSingleton<SkinChanger>
 {
     #region Variables
 
-    [Header("Characters")]
-    [SerializeField] private List<GameObject> characters;
+    [Header("Characters Prefabs")]
+    [SerializeField] private List<GameObject> characterPrefabs; // Prefabs originales
     
+    private List<GameObject> _characters = new(); // Instancias activas
     private GameObject _selectedCharacter;
     private GameObject _previousCharacter;
     private Vector3 _spawnPosition;
@@ -25,7 +26,7 @@ public class SkinChanger : PersistentSingleton<SkinChanger>
     private void Start()
     {
         _spawnPosition = Vector3.zero;
-        PrefabSpawner();
+        InstantiateCharacters();
         TagReader();
     }
 
@@ -33,12 +34,25 @@ public class SkinChanger : PersistentSingleton<SkinChanger>
     
     #region SkinChanger Functions
 
-    private void PrefabSpawner()
+    /// <summary>
+    /// Instancia todos los personajes y los desactiva.
+    /// </summary>
+    private void InstantiateCharacters()
     {
-        for (int i = 0; i < characters.Count; i++)
+        // Limpiar por si ya había
+        foreach (var c in _characters)
         {
-            characters[i] = Instantiate(characters[i]);
-            characters[i].SetActive(false);
+            if (c != null) Destroy(c);
+        }
+        _characters.Clear();
+
+        foreach (var prefab in characterPrefabs)
+        {
+            if (prefab == null) continue;
+
+            var instance = Instantiate(prefab);
+            instance.SetActive(false);
+            _characters.Add(instance);
         }
     }
     
@@ -70,27 +84,35 @@ public class SkinChanger : PersistentSingleton<SkinChanger>
             }
         }
     }
+
+    /// <summary>
+    /// Elimina y reinstancia todos los personajes.
+    /// </summary>
+    public void ReloadCharacters()
+    {
+        InstantiateCharacters();
+        TagReader();
+    }
     
     private void ChangeSkin(PlayerType type)
     {
-        switch (type)
+        int index = type switch
         {
-            case PlayerType.Sacerdote:
-                _selectedCharacter = characters[0];
-                break;
-            case PlayerType.Raton:
-                _selectedCharacter = characters[1];
-                break;
-            case PlayerType.Ixquic:
-                _selectedCharacter = characters[2];
-                break;
-            case PlayerType.Hunampu:
-                _selectedCharacter = characters[3];
-                break;
-            case PlayerType.Ixbalanque:
-                _selectedCharacter = characters[4];
-                break;
+            PlayerType.Sacerdote   => 0,
+            PlayerType.Raton       => 1,
+            PlayerType.Ixquic      => 2,
+            PlayerType.Hunampu     => 3,
+            PlayerType.Ixbalanque  => 4,
+            _ => 0
+        };
+
+        if (index < 0 || index >= _characters.Count)
+        {
+            Debug.LogError($"No hay personaje asignado para {type}");
+            return;
         }
+
+        _selectedCharacter = _characters[index];
 
         if (_previousCharacter != null && _previousCharacter != _selectedCharacter)
             _previousCharacter.SetActive(false);
