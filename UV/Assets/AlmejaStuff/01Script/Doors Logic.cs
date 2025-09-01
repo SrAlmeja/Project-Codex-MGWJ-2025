@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Eflatun.SceneReference;
+using Systems.SceneManagement;
 using UnityEngine.InputSystem;
 
 public class DoorsLogic : MonoBehaviour
@@ -14,7 +15,11 @@ public class DoorsLogic : MonoBehaviour
     [SerializeField] private SceneReference sceneToEnable;
     [SerializeField] private SceneReference sceneToDisable;
 
-
+    [SerializeField] private bool noDoor;
+    [Header("NextLevelReady"), SerializeField] private string sceneGroupName;
+    [SerializeField] private SOBoolean nextLevelReady;
+    
+    
     private bool _isOnArea;
     private GameObject _player;
 
@@ -35,11 +40,30 @@ public class DoorsLogic : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (!other.CompareTag("Player")) return;
+
+        _player = other.gameObject;
+
+        // 1. Si hay un nombre de escena válido Y el siguiente nivel está listo -> ir al siguiente nivel
+        if (!string.IsNullOrEmpty(sceneGroupName) && nextLevelReady.Value)
         {
-            _isOnArea = true;
-            _player = other.gameObject;    
+            Debug.Log("Se llamó NextLevel");
+            NextLevel(sceneGroupName);
+            return;
         }
+
+        // 2. Si NO hay puerta -> ejecutar acción automáticamente
+        if (noDoor)
+        {
+            Debug.Log("No hay puerta");
+            TurnOnScene();
+            TurnOffScene();
+            return;
+        }
+
+        // 3. Si HAY puerta -> esperar interacción
+        Debug.Log("Hay puerta");
+        _isOnArea = true;
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -86,6 +110,11 @@ public class DoorsLogic : MonoBehaviour
 
         //Debug.Log("[DoorsLogic] Objetos con tag 'SceneElements' desactivados en la escena a apagar.");
         //SkinChanger.Instance.TagReader(_player.transform);
+    }
+
+    private void NextLevel(string sceneGroupName)
+    {
+        SceneLoaderV2.Instance.LoadSceneGroupByName(sceneGroupName);
     }
 
     private List<GameObject> GetSceneElements(SceneReference sceneRef)

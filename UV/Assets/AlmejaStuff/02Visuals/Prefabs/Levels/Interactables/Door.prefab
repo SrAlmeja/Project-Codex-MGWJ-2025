@@ -97,3 +97,6 @@ MonoBehaviour:
   sceneToDisable:
     asset: {fileID: 102900000, guid: c63554b6e97513742aab1fa6f4b3db2d, type: 3}
     guid: c63554b6e97513742aab1fa6f4b3db2d
+  noDoor: 0
+  sceneGroupName: ChurchCinematic
+  nextLevelReady: {fileID: 11400000, guid: a5c28725bfff8164c84e7524758f8d8d, type: 2}

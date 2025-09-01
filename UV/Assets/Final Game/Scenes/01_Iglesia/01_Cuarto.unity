@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 215921019}
   m_Layer: 0
   m_Name: Controller
-  m_TagString: SceneElements
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1514,6 +1514,7 @@ GameObject:
   - component: {fileID: 1338862981}
   - component: {fileID: 1338862984}
   - component: {fileID: 1338862983}
+  - component: {fileID: 1338862985}
   m_Layer: 0
   m_Name: pluma_01
   m_TagString: Untagged
@@ -1675,6 +1676,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1338862985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338862979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eea9d67d45f7ad4d9681c98aa5fde7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1369761919
 GameObject:
   m_ObjectHideFlags: 0
@@ -2665,6 +2678,10 @@ PrefabInstance:
       propertyPath: forcedObject
       value: 
       objectReference: {fileID: 1652447550}
+    - target: {fileID: 5690084151996467341, guid: e6d5e8f43e72ca848b47ed99f9794f5d, type: 3}
+      propertyPath: sceneGroupName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5690084151996467341, guid: e6d5e8f43e72ca848b47ed99f9794f5d, type: 3}
       propertyPath: ObjectsToDisable.Array.size
       value: 2
