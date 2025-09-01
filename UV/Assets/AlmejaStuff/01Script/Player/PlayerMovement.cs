@@ -17,7 +17,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private SOBoolean unArmed;
     private bool _imWarrior;
     private Vector2 _lastDirection = Vector2.right;
-    
+
+    [Header("canInteract"), SerializeField]
+    public SOBoolean canInteract;
+
+    public NpcInteraction npcInteraction;
+
     #region Animation Variables
     [Header("Animation"), SerializeField] private Animator playerAnimator;
     private Vector3 _playerRotation;
@@ -73,8 +78,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.CompareTag("Interactable"))
         {
-            //canInteract.Value = true;
-            //npcInteraction = collision.GetComponent<NpcInteraction>();
+            canInteract.Value = true;
+            npcInteraction = collision.GetComponent<NpcInteraction>();
         }
     }
 
@@ -82,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.CompareTag("Interactable"))
         {
-            //canInteract.Value = false;
+            canInteract.Value = false;
         }
     }
 
@@ -109,13 +114,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Interact(InputAction.CallbackContext context)
     {
-        /*
         if (canInteract.Value == true)
         {
             npcInteraction.EnableInteractable();
             Debug.Log("Interact");
         }
-        */
     }
     
     private void Attack(InputAction.CallbackContext context)
