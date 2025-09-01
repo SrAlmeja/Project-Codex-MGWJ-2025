@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 381818178580611046}
   m_Layer: 0
   m_Name: Fraile
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -168,6 +168,11 @@ PrefabInstance:
       propertyPath: attackEfect
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8407845896195889890, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
+      propertyPath: canInteract
+      propertyPath: canInteract
+      value: 
+      objectReference: {fileID: 11400000, guid: ef827ecda34b69540a8cb2fc4a64aa8a, type: 2}
     - target: {fileID: 8407845896195889890, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: movementSpeed
       value: 5.07

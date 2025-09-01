@@ -17,14 +17,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private SOBoolean unArmed;
     private bool _imWarrior;
     private Vector2 _lastDirection = Vector2.right;
-    
+
+    [Header("canInteract"), SerializeField]
+    public SOBoolean canInteract;
+
+    public NpcInteraction npcInteraction;
+
     #region Animation Variables
     [Header("Animation"), SerializeField] private Animator playerAnimator;
     private Vector3 _playerRotation;
+
     #endregion
     
     #endregion
-    
+
     #region UnityFunctions
 
     private void Start()
@@ -67,11 +73,28 @@ public class PlayerMovement : MonoBehaviour
         attack.action.started -= Attack;
         interact.action.started -= Interact;
     }
-    
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Interactable"))
+        {
+            canInteract.Value = true;
+            npcInteraction = collision.GetComponent<NpcInteraction>();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Interactable"))
+        {
+            canInteract.Value = false;
+        }
+    }
+
     #endregion
 
     #region MovementFunctions
-    
+
     /// <summary>
     /// transform the player position based in the moveDirection and the movenentSpeed
     /// Also Flip the Sprite based in the _moveDirection
@@ -91,7 +114,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Interact(InputAction.CallbackContext context)
     {
-        Debug.Log("Interact");
+        if (canInteract.Value == true)
+        {
+            npcInteraction.EnableInteractable();
+            Debug.Log("Interact");
+        }
     }
     
     private void Attack(InputAction.CallbackContext context)
@@ -124,20 +151,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateAniamtor()
     {
-        playerAnimator.SetBool("Walking", false);
-        playerAnimator.SetBool("SideWalk", false);
-        playerAnimator.SetBool("UpWalk", false);
-        playerAnimator.SetBool("UpIddle", false);
-        
+        BackToIdlle();
         if (_moveDirection == Vector2.zero)
         {
             // El jugador está quieto, usamos la última dirección
             if (_lastDirection.y > 0)
                 playerAnimator.SetBool("UpIddle", true);
-            else if (Mathf.Abs(_lastDirection.x) > 0)
-                playerAnimator.SetBool("SideWalk", true); // Puedes usar una idle lateral si tienes
+            else if (Mathf.Abs(_lastDirection.x) > 0) BackToIdlle();
+            /*playerAnimator.SetBool("SideWalk", true); // Puedes usar una idle lateral si tienes
             else
-                playerAnimator.SetBool("Walking", true); // Idle hacia abajo
+                playerAnimator.SetBool("Walking", true); // Idle hacia abajo*/
         }
         else
         {
@@ -151,6 +174,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void BackToIdlle()
+    {
+        playerAnimator.SetBool("Walking", false);
+        playerAnimator.SetBool("SideWalk", false);
+        playerAnimator.SetBool("UpWalk", false);
+        playerAnimator.SetBool("UpIddle", false);
+
+    }
     
     #endregion
 }
