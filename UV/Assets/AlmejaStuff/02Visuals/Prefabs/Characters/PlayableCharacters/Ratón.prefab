@@ -85,6 +85,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8407845896195889890, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
+      propertyPath: canInteract
+      value: 
+      objectReference: {fileID: 11400000, guid: 75345794942b00a4aad2cffd4c9b89f5, type: 2}
+    - target: {fileID: 8407845896195889890, guid: 80ed009b55b3f344c838ce8c115c19c9, type: 3}
       propertyPath: playerAnimator
       value: 
       objectReference: {fileID: 0}

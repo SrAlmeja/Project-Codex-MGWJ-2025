@@ -17,14 +17,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private SOBoolean unArmed;
     private bool _imWarrior;
     private Vector2 _lastDirection = Vector2.right;
-    
+
+    [Header("canInteract"), SerializeField]
+    public SOBoolean canInteract;
+
+    public NpcInteraction npcInteraction;
+
     #region Animation Variables
     [Header("Animation"), SerializeField] private Animator playerAnimator;
     private Vector3 _playerRotation;
+
     #endregion
     
     #endregion
-    
+
     #region UnityFunctions
 
     private void Start()
@@ -67,11 +73,28 @@ public class PlayerMovement : MonoBehaviour
         attack.action.started -= Attack;
         interact.action.started -= Interact;
     }
-    
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Interactable"))
+        {
+            canInteract.Value = true;
+            npcInteraction = collision.GetComponent<NpcInteraction>();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Interactable"))
+        {
+            canInteract.Value = false;
+        }
+    }
+
     #endregion
 
     #region MovementFunctions
-    
+
     /// <summary>
     /// transform the player position based in the moveDirection and the movenentSpeed
     /// Also Flip the Sprite based in the _moveDirection
@@ -91,7 +114,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Interact(InputAction.CallbackContext context)
     {
-        Debug.Log("Interact");
+        if (canInteract.Value == true)
+        {
+            npcInteraction.EnableInteractable();
+            Debug.Log("Interact");
+        }
     }
     
     private void Attack(InputAction.CallbackContext context)
