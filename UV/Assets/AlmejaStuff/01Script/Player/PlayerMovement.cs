@@ -124,20 +124,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateAniamtor()
     {
-        playerAnimator.SetBool("Walking", false);
-        playerAnimator.SetBool("SideWalk", false);
-        playerAnimator.SetBool("UpWalk", false);
-        playerAnimator.SetBool("UpIddle", false);
-        
+        BackToIdlle();
         if (_moveDirection == Vector2.zero)
         {
             // El jugador está quieto, usamos la última dirección
             if (_lastDirection.y > 0)
                 playerAnimator.SetBool("UpIddle", true);
-            else if (Mathf.Abs(_lastDirection.x) > 0)
-                playerAnimator.SetBool("SideWalk", true); // Puedes usar una idle lateral si tienes
+            else if (Mathf.Abs(_lastDirection.x) > 0) BackToIdlle();
+            /*playerAnimator.SetBool("SideWalk", true); // Puedes usar una idle lateral si tienes
             else
-                playerAnimator.SetBool("Walking", true); // Idle hacia abajo
+                playerAnimator.SetBool("Walking", true); // Idle hacia abajo*/
         }
         else
         {
@@ -151,6 +147,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void BackToIdlle()
+    {
+        playerAnimator.SetBool("Walking", false);
+        playerAnimator.SetBool("SideWalk", false);
+        playerAnimator.SetBool("UpWalk", false);
+        playerAnimator.SetBool("UpIddle", false);
+
+    }
     
     #endregion
 }
