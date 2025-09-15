@@ -239,7 +239,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1513546267}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 73920b4a0c6c9834981f2268a7c2a310, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: c30ec84e633190b42893f101c22b5454, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 562895939}
@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e7e090defcccf54facda84f0131f197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneGroupName: Xibalba
+  sceneGroupName: Credits
   videoPlayer: {fileID: 1513546268}
 --- !u!4 &2043875691
 Transform:

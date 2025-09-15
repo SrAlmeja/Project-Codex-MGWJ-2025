@@ -1175,6 +1175,56 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &637071082
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 637071084}
+  - component: {fileID: 637071083}
+  m_Layer: 0
+  m_Name: DetectorPlumaGlobal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &637071083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637071082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96fec579649338b45a9712ea3aa74faf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerFlag: {fileID: 11400000, guid: 9778dc0a5c7aa7e459dad3618a15e218, type: 2}
+  targetSceneName: 01_Cuarto
+  targetObjectPath: Word (1)/Interactuables/pluma_01
+  ensureParentsActive: 0
+  completionFlag: {fileID: 11400000, guid: 9eec63714de666a4587e969212a176ea, type: 2}
+  runOnlyOnce: 1
+--- !u!4 &637071084
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637071082}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.044315748, y: 2.3724291, z: 0.23510145}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &730607745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1185,9 +1235,13 @@ GameObject:
   m_Component:
   - component: {fileID: 730607747}
   - component: {fileID: 730607746}
+  - component: {fileID: 730607748}
+  - component: {fileID: 730607751}
+  - component: {fileID: 730607750}
+  - component: {fileID: 730607749}
   m_Layer: 0
   m_Name: Bible
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1259,6 +1313,110 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470664308}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &730607748
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730607745}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.7899511, y: 2.730234}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.69072163, y: 0.88659793}
+    newSize: {x: 0.69072163, y: 0.88659793}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.7895288, y: 1.2936988}
+  m_EdgeRadius: 0
+--- !u!114 &730607749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730607745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37cfb08bee793d449817915f062401df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableTag: Player
+  interactionRequestEvent: {fileID: 11400000, guid: 303857d2d9552400384b2c2081589100, type: 2}
+--- !u!114 &730607750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730607745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8508f1cf4a0bb47f18b2ff8c108ea4aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversations:
+  - {fileID: 11400000, guid: b6e63947df6b2d242826b81b564fb75c, type: 2}
+  - {fileID: 11400000, guid: ac22a7329f7d86d4593a0e172b171ae3, type: 2}
+  - {fileID: 11400000, guid: f48e4b5dc3d5b954b95f2d63ee9f4daf, type: 2}
+  nextIndex: 0
+  conversationRequestEvent: {fileID: 11400000, guid: 39948954e3152b0458363a09a09159ce, type: 2}
+--- !u!114 &730607751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730607745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 714dc3e8046cd0a41afd98e0071b1bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 730607750}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerConversation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1098471209
 GameObject:
   m_ObjectHideFlags: 0
@@ -1868,9 +2026,13 @@ GameObject:
   - component: {fileID: 1819240983}
   - component: {fileID: 1819240982}
   - component: {fileID: 1819240984}
+  - component: {fileID: 1819240985}
+  - component: {fileID: 1819240988}
+  - component: {fileID: 1819240987}
+  - component: {fileID: 1819240986}
   m_Layer: 0
   m_Name: Bed
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1971,10 +2133,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.44553173, y: -0.4159007}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1985,8 +2147,110 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5154638, y: 2.917526}
+  m_Size: {x: 2.4065268, y: 3.7493277}
   m_EdgeRadius: 0
+--- !u!61 &1819240985
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819240981}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0004799366, y: -0.022085905}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.5154638, y: 2.917526}
+    newSize: {x: 1.5154638, y: 2.917526}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.514504, y: 2.961698}
+  m_EdgeRadius: 0
+--- !u!114 &1819240986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819240981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37cfb08bee793d449817915f062401df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableTag: Player
+  interactionRequestEvent: {fileID: 11400000, guid: 303857d2d9552400384b2c2081589100, type: 2}
+--- !u!114 &1819240987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819240981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 714dc3e8046cd0a41afd98e0071b1bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1819240988}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerConversation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1819240988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819240981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8508f1cf4a0bb47f18b2ff8c108ea4aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversations:
+  - {fileID: 11400000, guid: be98201318a0e86409f8bb88a07f6f4a, type: 2}
+  nextIndex: 0
+  conversationRequestEvent: {fileID: 11400000, guid: 39948954e3152b0458363a09a09159ce, type: 2}
 --- !u!1 &1819245611
 GameObject:
   m_ObjectHideFlags: 0
@@ -2556,3 +2820,4 @@ SceneRoots:
   - {fileID: 6987401924066627102}
   - {fileID: 1652447551}
   - {fileID: 215921019}
+  - {fileID: 637071084}

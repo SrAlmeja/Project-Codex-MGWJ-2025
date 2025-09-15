@@ -716,20 +716,30 @@ MonoBehaviour:
         asset: {fileID: 102900000, guid: d6db28a008e55da4290d8071685c12a7, type: 3}
         guid: d6db28a008e55da4290d8071685c12a7
       SceneType: 5
-  - GroupName: Xibalba
+  - GroupName: Cinematic1
     Scenes:
     - Reference:
-        asset: {fileID: 102900000, guid: 16abe520a642cd141b6799c98b7c7679, type: 3}
-        guid: 16abe520a642cd141b6799c98b7c7679
+        asset: {fileID: 102900000, guid: d6db28a008e55da4290d8071685c12a7, type: 3}
+        guid: d6db28a008e55da4290d8071685c12a7
       SceneType: 5
+  - GroupName: Cinematic2
+    Scenes:
     - Reference:
-        asset: {fileID: 102900000, guid: 3bddabcfe8d7d1947adfce4e8ebcab85, type: 3}
-        guid: 3bddabcfe8d7d1947adfce4e8ebcab85
-      SceneType: 6
+        asset: {fileID: 102900000, guid: deb48cadc6bdab343b764be11bb7847c, type: 3}
+        guid: deb48cadc6bdab343b764be11bb7847c
+      SceneType: 5
+  - GroupName: Cinematic3
+    Scenes:
     - Reference:
-        asset: {fileID: 102900000, guid: d17df23ed8f77aa4f885c63af6a837e1, type: 3}
-        guid: d17df23ed8f77aa4f885c63af6a837e1
-      SceneType: 6
+        asset: {fileID: 102900000, guid: 77c26021e9d81064ab3dc93e90e66a0b, type: 3}
+        guid: 77c26021e9d81064ab3dc93e90e66a0b
+      SceneType: 5
+  - GroupName: Credits
+    Scenes:
+    - Reference:
+        asset: {fileID: 102900000, guid: 33a43b27819285c4fb873045a23202cf, type: 3}
+        guid: 33a43b27819285c4fb873045a23202cf
+      SceneType: 5
 --- !u!4 &1221533417
 Transform:
   m_ObjectHideFlags: 0
