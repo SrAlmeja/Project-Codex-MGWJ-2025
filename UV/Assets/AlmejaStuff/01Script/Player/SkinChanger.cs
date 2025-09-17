@@ -14,10 +14,26 @@ public class SkinChanger : PersistentSingleton<SkinChanger>
     private GameObject _previousCharacter;
     private Vector3 _spawnPosition;
     private TagSelector _tagSelector;
+    
+    private Dictionary<string, Vector3> _spawnPoints = new();
+    private string _selectedSpawnID = "default"; // Se puede definir desde otro sistemaa ver 
 
     #endregion
 
     #region Unity Functions
+
+    private void OnEnable()
+    {
+        TagSelector.OnTagSelectorReady += HandleTagSelector;
+        SpawnPoint.OnSpawnPointReady += SetSpawnPosition;
+
+    }
+    private void OnDisable()
+    {
+        TagSelector.OnTagSelectorReady -= HandleTagSelector;
+        SpawnPoint.OnSpawnPointReady -= SetSpawnPosition;
+    }
+    
     private void Awake()
     {
         base.Awake();
@@ -27,19 +43,16 @@ public class SkinChanger : PersistentSingleton<SkinChanger>
     {
         _spawnPosition = Vector3.zero;
         InstantiateCharacters();
-        TagReader();
     }
 
     #endregion
     
     #region SkinChanger Functions
-
     /// <summary>
     /// Instancia todos los personajes y los desactiva.
     /// </summary>
     private void InstantiateCharacters()
     {
-        // Limpiar por si ya había
         foreach (var c in _characters)
         {
             if (c != null) Destroy(c);
@@ -50,50 +63,54 @@ public class SkinChanger : PersistentSingleton<SkinChanger>
         {
             if (prefab == null) continue;
 
-            var instance = Instantiate(prefab);
+            var instance = Instantiate(prefab, Vector3.zero, Quaternion.identity);
             instance.SetActive(false);
             _characters.Add(instance);
+
         }
     }
     
-    public void TagReader(Transform playerPosition = null)
+    public void SetSpawnPosition(Vector3 position)
     {
-        print("TagReader llamado");
-        TagSelector selector = FindObjectOfType<TagSelector>();
-        if (selector == null)
+        _spawnPosition = position;
+        Debug.Log($"[SkinChanger] Posición de spawn recibida: {_spawnPosition}");
+    }
+
+
+    private void HandleTagSelector(TagSelector selector)
+    {
+        Debug.Log($"[SkinChanger] Recibido tipo de jugador: {selector.PlayerType}");
+        _tagSelector = selector;
+
+        // Apagar todos los prefabs
+        foreach (var personaje in _characters)
         {
-            Debug.LogError("No se ha encontrado el TagSelector");
-            return;
+            if (personaje != null)
+                personaje.SetActive(false);
         }
 
-        if (_selectedCharacter != null)
-            _previousCharacter = _selectedCharacter;
-
-        if (playerPosition != null)
-            _spawnPosition = playerPosition.position;
-
+        // Activar el personaje correcto
         ChangeSkin(selector.PlayerType);
 
-        // Mover el hijo con el tag "Player" dentro del nuevo personaje
-        foreach (var child in _selectedCharacter.GetComponentsInChildren<Transform>(true))
+        // Mover el hijo "Player" del personaje activo
+        if (_selectedCharacter != null)
         {
-            if (child.CompareTag("Player"))
+            _selectedCharacter.SetActive(true);
+
+            foreach (var child in _selectedCharacter.GetComponentsInChildren<Transform>(true))
             {
-                child.position = _spawnPosition;
-                break;
+                if (child.CompareTag("Player"))
+                {
+                    child.position = _spawnPosition;
+                    Debug.Log($"[SkinChanger] Posicionado MainPlayer en: {child.position}");
+                    break;
+                }
             }
         }
     }
 
-    /// <summary>
-    /// Elimina y reinstancia todos los personajes.
-    /// </summary>
-    public void ReloadCharacters()
-    {
-        InstantiateCharacters();
-        TagReader();
-    }
-    
+
+
     private void ChangeSkin(PlayerType type)
     {
         int index = type switch
@@ -112,12 +129,19 @@ public class SkinChanger : PersistentSingleton<SkinChanger>
             return;
         }
 
-        _selectedCharacter = _characters[index];
+        for (int i = 0; i < _characters.Count; i++)
+        {
+            if (_characters[i] == null) continue;
 
-        if (_previousCharacter != null && _previousCharacter != _selectedCharacter)
-            _previousCharacter.SetActive(false);
+            bool esSeleccionado = i == index;
+            _characters[i].SetActive(esSeleccionado);
 
-        _selectedCharacter.SetActive(true);
+            if (esSeleccionado)
+                _selectedCharacter = _characters[i];
+        }
+
+        Debug.Log($"[SkinChanger] Activado personaje: {_selectedCharacter.name}");
     }
+
     #endregion
 }

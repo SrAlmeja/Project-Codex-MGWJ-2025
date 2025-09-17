@@ -8,7 +8,7 @@ public class Bootstrapper : PersistentSingleton<Bootstrapper>
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     static void Init()
     {
-        Debug.Log("Bootstrapper...");
+        //Debug.Log("Bootstrapper...");
         LoadBootstrapperScene();
     }
     static void LoadBootstrapperScene()

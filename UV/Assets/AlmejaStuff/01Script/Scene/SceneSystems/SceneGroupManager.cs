@@ -51,7 +51,7 @@ namespace Systems.SceneManagment
                     continue;
                 }
                 
-                Debug.Log($"SceneGroupManager: Loading scene '{sceneData.Name}'...");
+                //  Debug.Log($"SceneGroupManager: Loading scene '{sceneData.Name}'..."); //Nombra la escena cargada
                 var op = SceneManager.LoadSceneAsync(sceneData.Name, LoadSceneMode.Additive);
                 op.allowSceneActivation = true;
 
@@ -63,7 +63,7 @@ namespace Systems.SceneManagment
                 }
                 _doneCount++;
                 OnSceneLoaded(sceneData.Name);
-                Debug.Log($"SceneGroupManager: Scene '{sceneData.Name}' loaded.");
+                // Debug.Log($"SceneGroupManager: Scene '{sceneData.Name}' loaded."); //Nombra la escena cargada
             }
 
             _activeName = ActiveSceneGroup.FindSceneNameByType(SceneType.ActiveScene);
@@ -71,7 +71,7 @@ namespace Systems.SceneManagment
             if(s.IsValid()) SceneManager.SetActiveScene(s);
             
             OnSceneGroupLoaded();
-            Debug.Log($"SceneGroupManager: SceneGroup '{sGroup.GroupName}' complete loaded.");
+            //Debug.Log($"SceneGroupManager: SceneGroup '{sGroup.GroupName}' complete loaded.");
         }
 
         public IEnumerator UnloadScenesCoroutine()
@@ -92,11 +92,11 @@ namespace Systems.SceneManagment
 
             foreach (var name in _toUnload)
             {
-                Debug.Log($"SceneGroupManager: Unloading scene '{name}'...");
+                //Debug.Log($"SceneGroupManager: Unloading scene '{name}'..."); //Muestra que escena se va a desinstalar.
                 var op = SceneManager.UnloadSceneAsync(name);
                 if (op == null) continue;
                 while (!op.isDone) yield return null;
-                Debug.Log($"SceneGroupManager: Scene '{name}' unloaded.");
+                //Debug.Log($"SceneGroupManager: Scene '{name}' unloaded."); //Muestra que escena ya se desinstaló
             }
         }
         public SceneGroupManager(MonoBehaviour owner) => managerOwner = owner;
