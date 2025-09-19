@@ -26,9 +26,34 @@ public class DoorsLogic : MonoBehaviour
     private bool _isOnArea;
     private GameObject _player;
 
+    [Header("Materiales (OBJETO EXTERNO)")]
+    [Tooltip("El objeto al que le quieres cambiar el material cuando el Player entre.")]
+    [SerializeField] private GameObject targetObject;
+
+    [Tooltip("Material que se aplicará mientras el Player esté en el trigger.")]
+    [SerializeField] private Material highlightMaterial;
+
+    // Cache de los SpriteRenderers del objeto externo y sus materiales originales
+    private SpriteRenderer[] _targetRenderers;
+    private readonly Dictionary<SpriteRenderer, Material> _originalTargetMats = new();
+
     #endregion
 
     #region Unity Functions
+
+    private void Awake()
+    {
+        if (targetObject != null)
+        {
+            _targetRenderers = targetObject.GetComponentsInChildren<SpriteRenderer>(true);
+
+            foreach (var sr in _targetRenderers)
+            {
+                if (sr == null) continue;
+                _originalTargetMats[sr] = sr.sharedMaterial; // guardamos el material original
+            }
+        }
+    }
 
     private void OnEnable()
     {
@@ -65,13 +90,26 @@ public class DoorsLogic : MonoBehaviour
 
         // 3. Si HAY puerta -> esperar interacción
         Debug.Log("Hay puerta");
-        _isOnArea = true;
+        _isOnArea = true; 
+
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (highlightMaterial != null)
+                ApplyHighlightToTarget();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
+        {
             _isOnArea = false;
+            RestoreTargetMaterials();
+        }
     }
 
     #endregion
@@ -134,6 +172,31 @@ public class DoorsLogic : MonoBehaviour
 
         return result;
     }
+    #endregion
 
+    #region Material Logic
+    private void ApplyHighlightToTarget()
+    {
+        if (highlightMaterial == null || _targetRenderers == null) return;
+
+        foreach (var sr in _targetRenderers)
+        {
+            if (sr == null) continue;
+            if (sr.sharedMaterial != highlightMaterial)
+                sr.sharedMaterial = highlightMaterial;
+        }
+    }
+
+    private void RestoreTargetMaterials()
+    {
+        if (_targetRenderers == null) return;
+
+        foreach (var sr in _targetRenderers)
+        {
+            if (sr == null) continue;
+            if (_originalTargetMats.TryGetValue(sr, out var original))
+                sr.sharedMaterial = original;
+        }
+    }
     #endregion
 }

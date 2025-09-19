@@ -1372,6 +1372,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableTag: Player
   interactionRequestEvent: {fileID: 11400000, guid: 303857d2d9552400384b2c2081589100, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: 307c4812701f7b6418d2cee3d71f5b3d, type: 2}
+  affectChildrenSpriteRenderers: 1
 --- !u!114 &730607750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2208,6 +2210,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableTag: Player
   interactionRequestEvent: {fileID: 11400000, guid: 303857d2d9552400384b2c2081589100, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: 9506cfe70399fea42b8c8d1b88d57981, type: 2}
+  affectChildrenSpriteRenderers: 1
 --- !u!114 &1819240987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2679,9 +2683,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1652447550}
     - target: {fileID: 5690084151996467341, guid: e6d5e8f43e72ca848b47ed99f9794f5d, type: 3}
+      propertyPath: targetObject
+      value: 
+      objectReference: {fileID: 1098471209}
+    - target: {fileID: 5690084151996467341, guid: e6d5e8f43e72ca848b47ed99f9794f5d, type: 3}
       propertyPath: sceneGroupName
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5690084151996467341, guid: e6d5e8f43e72ca848b47ed99f9794f5d, type: 3}
+      propertyPath: highlightMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: c0e59aa973b973b41b32bf10447826e9, type: 2}
     - target: {fileID: 5690084151996467341, guid: e6d5e8f43e72ca848b47ed99f9794f5d, type: 3}
       propertyPath: ObjectsToDisable.Array.size
       value: 2
