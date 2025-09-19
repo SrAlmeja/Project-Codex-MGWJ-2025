@@ -10,6 +10,7 @@ public class WinConditionListener : MonoBehaviour
     public void TriggerCondition()
     {
         conditionSet.MarkCompleted(conditionID);
+        print("El concicional " + conditionID + " ha sido completado");
     }
 
 }
