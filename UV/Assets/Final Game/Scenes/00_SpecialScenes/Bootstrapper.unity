@@ -691,13 +691,13 @@ MonoBehaviour:
   - GroupName: Church
     Scenes:
     - Reference:
-        asset: {fileID: 102900000, guid: c63554b6e97513742aab1fa6f4b3db2d, type: 3}
-        guid: c63554b6e97513742aab1fa6f4b3db2d
-      SceneType: 6
-    - Reference:
         asset: {fileID: 102900000, guid: eb5dab6aa5aa3d3459d879058dfc45ab, type: 3}
         guid: eb5dab6aa5aa3d3459d879058dfc45ab
       SceneType: 1
+    - Reference:
+        asset: {fileID: 102900000, guid: c63554b6e97513742aab1fa6f4b3db2d, type: 3}
+        guid: c63554b6e97513742aab1fa6f4b3db2d
+      SceneType: 6
     - Reference:
         asset: {fileID: 102900000, guid: 1a934700803cbef4ba1e13cc8508c61d, type: 3}
         guid: 1a934700803cbef4ba1e13cc8508c61d

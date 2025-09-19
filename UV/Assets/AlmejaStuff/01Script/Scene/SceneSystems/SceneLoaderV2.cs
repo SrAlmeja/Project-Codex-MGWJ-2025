@@ -92,7 +92,7 @@ namespace Systems.SceneManagement
         private void OnGroupLoaded()
         {
             EnableLoadingCanvas(false);
-            Debug.Log("SceneLoaderV2: SceneGroup loaded (event).");
+            //Debug.Log("SceneLoaderV2: SceneGroup loaded (event).");
         }
         #endregion
     }

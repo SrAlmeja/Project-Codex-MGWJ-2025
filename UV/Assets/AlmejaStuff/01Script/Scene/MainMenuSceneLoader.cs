@@ -12,7 +12,7 @@ public class MainMenuSceneLoader : MonoBehaviour
     
     public void OnStartNGame()
     {
-        Debug.Log($"[Menu] ▶ New Game: {sceneGroupName}");
+        //Debug.Log($"[Menu] ▶ New Game: {sceneGroupName}");
         SceneLoaderV2.Instance.LoadSceneGroupByName(sceneGroupName);
     }
 }

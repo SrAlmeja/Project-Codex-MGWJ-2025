@@ -79,6 +79,8 @@ public class DoorsLogic : MonoBehaviour
     private void Interact(InputAction.CallbackContext context)
     {
         if (!_isOnArea) return;
+        
+        if (_player != null) PlayerTransitionData.SavePosition(_player.transform.position);
 
         TurnOnScene();
         TurnOffScene();
@@ -137,3 +139,4 @@ public class DoorsLogic : MonoBehaviour
 
     #endregion
 }
+
