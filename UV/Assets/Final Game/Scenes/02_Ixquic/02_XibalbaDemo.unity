@@ -8358,7 +8358,15 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5690084151996467341, guid: e6d5e8f43e72ca848b47ed99f9794f5d, type: 3}
+      propertyPath: targetObject
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690084151996467341, guid: e6d5e8f43e72ca848b47ed99f9794f5d, type: 3}
       propertyPath: sceneGroupName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690084151996467341, guid: e6d5e8f43e72ca848b47ed99f9794f5d, type: 3}
+      propertyPath: highlightMaterial
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5690084151996467341, guid: e6d5e8f43e72ca848b47ed99f9794f5d, type: 3}
@@ -13767,9 +13775,12 @@ GameObject:
   - component: {fileID: 2007728959}
   - component: {fileID: 2007728958}
   - component: {fileID: 2007728960}
+  - component: {fileID: 2007728963}
+  - component: {fileID: 2007728962}
+  - component: {fileID: 2007728961}
   m_Layer: 0
   m_Name: Agujero
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13876,6 +13887,66 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.31040153
+--- !u!114 &2007728961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007728957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37cfb08bee793d449817915f062401df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableTag: Player
+  interactionRequestEvent: {fileID: 11400000, guid: 303857d2d9552400384b2c2081589100, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: 548ac62fd7c154744a877733b23ea994, type: 2}
+  affectChildrenSpriteRenderers: 1
+--- !u!114 &2007728962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007728957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8508f1cf4a0bb47f18b2ff8c108ea4aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversations:
+  - {fileID: 11400000, guid: 1601a8edb579c9d46a701195174f9c41, type: 2}
+  - {fileID: 11400000, guid: 3ca84b73bded15a41987ebf266cb322b, type: 2}
+  nextIndex: 0
+  conversationRequestEvent: {fileID: 11400000, guid: 39948954e3152b0458363a09a09159ce, type: 2}
+--- !u!114 &2007728963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007728957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 714dc3e8046cd0a41afd98e0071b1bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2007728962}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerConversation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2008047034
 GameObject:
   m_ObjectHideFlags: 0
