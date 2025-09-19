@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: 01CuartoDialog_EstanteD
   m_EditorClassIdentifier: 
   leftCharacter: {fileID: 11400000, guid: 85e00ba8066ac1f4584efbee639515d3, type: 2}
-  rightCharacter: {fileID: 11400000, guid: cc5b5a8b9ee32954593050065091b92e, type: 2}
+  rightCharacter: {fileID: 11400000, guid: 7e0d81cbfb5369e40a12d51097b83c81, type: 2}
   sentences:
   - character: {fileID: 11400000, guid: 85e00ba8066ac1f4584efbee639515d3, type: 2}
     text: "No me den peso torcido ni lomo al vac\xEDo. He visto caer gigantes por
       mala postura."
-  - character: {fileID: 11400000, guid: cc5b5a8b9ee32954593050065091b92e, type: 2}
+  - character: {fileID: 11400000, guid: 15df0085de8554d478fc2b4477e21d0c, type: 2}
     text: "Te colocar\xE9 cunas en \u201CV\u201D, separadores neutros y soporte al
       lomo. Pax inter folia"

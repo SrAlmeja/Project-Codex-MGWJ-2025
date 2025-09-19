@@ -16,10 +16,13 @@ public class DoorsLogic : MonoBehaviour
     [SerializeField] private SceneReference sceneToDisable;
 
     [SerializeField] private bool noDoor;
-    [Header("NextLevelReady"), SerializeField] private string sceneGroupName;
-    [SerializeField] private SOBoolean nextLevelReady;
-    
-    
+
+    [Header("NextLevel")]
+    [SerializeField] private string sceneGroupName;
+
+    [Header("Flag a setear cuando el objeto quede activo")]
+    public GlobalBoolFlag completionFlag; // ⟵ Reemplazo de SOBoolean nextLevelReady
+
     private bool _isOnArea;
     private GameObject _player;
 
@@ -36,7 +39,6 @@ public class DoorsLogic : MonoBehaviour
     {
         interact.action.started -= Interact;
     }
-    
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -44,8 +46,8 @@ public class DoorsLogic : MonoBehaviour
 
         _player = other.gameObject;
 
-        // 1. Si hay un nombre de escena válido Y el siguiente nivel está listo -> ir al siguiente nivel
-        if (!string.IsNullOrEmpty(sceneGroupName) && nextLevelReady.Value)
+        // 1. Si hay un nombre de escena válido Y el flag global está en TRUE -> ir al siguiente nivel
+        if (!string.IsNullOrEmpty(sceneGroupName) && completionFlag != null && completionFlag.Value)
         {
             Debug.Log("Se llamó NextLevel");
             NextLevel(sceneGroupName);
@@ -82,24 +84,20 @@ public class DoorsLogic : MonoBehaviour
         TurnOffScene();
     }
 
-
     #region Scene Logic
-    
+
     private void TurnOnScene()
     {
         foreach (var obj in GetSceneElements(sceneToEnable))
             obj.SetActive(true);
+
         ViCamFollow camFollow = FindObjectOfType<ViCamFollow>();
         if (camFollow != null)
-        {
             camFollow.FindPlayer();
-            //Debug.Log("[DoorsLogic] Cámara encontrada y configurada.");
-        }
         else
-        {
             Debug.LogWarning("[DoorsLogic] No se encontró ViCamFollow en escena.");
-        }
     }
+
     private void TurnOffScene()
     {
         foreach (var obj in GetSceneElements(sceneToDisable))
@@ -107,9 +105,6 @@ public class DoorsLogic : MonoBehaviour
             if (obj != null && obj.activeSelf)
                 obj.SetActive(false);
         }
-
-        //Debug.Log("[DoorsLogic] Objetos con tag 'SceneElements' desactivados en la escena a apagar.");
-        //SkinChanger.Instance.TagReader(_player.transform);
     }
 
     private void NextLevel(string sceneGroupName)
@@ -139,5 +134,6 @@ public class DoorsLogic : MonoBehaviour
 
         return result;
     }
+
     #endregion
 }

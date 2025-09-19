@@ -3392,6 +3392,10 @@ PrefabInstance:
       value: DoorLibrary
       objectReference: {fileID: 0}
     - target: {fileID: 3198243495156779557, guid: e6d5e8f43e72ca848b47ed99f9794f5d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3198243495156779557, guid: e6d5e8f43e72ca848b47ed99f9794f5d, type: 3}
       propertyPath: m_TagString
       value: Respawn
       objectReference: {fileID: 0}
@@ -4803,6 +4807,10 @@ PrefabInstance:
       value: DoorFranciscoRoom
       objectReference: {fileID: 0}
     - target: {fileID: 3198243495156779557, guid: e6d5e8f43e72ca848b47ed99f9794f5d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3198243495156779557, guid: e6d5e8f43e72ca848b47ed99f9794f5d, type: 3}
       propertyPath: m_TagString
       value: Respawn
       objectReference: {fileID: 0}
@@ -4811,8 +4819,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9070688943521127902, guid: 3d99967c6351f6c40b2885e51a16f967, type: 3}
     - target: {fileID: 5690084151996467341, guid: e6d5e8f43e72ca848b47ed99f9794f5d, type: 3}
-      propertyPath: sceneGroupName
+      propertyPath: completionFlag
       value: 
+      objectReference: {fileID: 11400000, guid: 9eec63714de666a4587e969212a176ea, type: 2}
+    - target: {fileID: 5690084151996467341, guid: e6d5e8f43e72ca848b47ed99f9794f5d, type: 3}
+      propertyPath: sceneGroupName
+      value: Cinematic1
       objectReference: {fileID: 0}
     - target: {fileID: 5690084151996467341, guid: e6d5e8f43e72ca848b47ed99f9794f5d, type: 3}
       propertyPath: sceneToEnable.guid
@@ -5377,6 +5389,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableTag: Player
   interactionRequestEvent: {fileID: 11400000, guid: 303857d2d9552400384b2c2081589100, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: 7006ea6ea12a2e048827c85c34b07787, type: 2}
+  affectChildrenSpriteRenderers: 1
 --- !u!1 &6221424850617694632
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: 01CuartoDialog_EstanteI
   m_EditorClassIdentifier: 
   leftCharacter: {fileID: 11400000, guid: 726cf27b05019ec4f8efa00ebf9d3985, type: 2}
-  rightCharacter: {fileID: 11400000, guid: cc5b5a8b9ee32954593050065091b92e, type: 2}
+  rightCharacter: {fileID: 11400000, guid: 7e0d81cbfb5369e40a12d51097b83c81, type: 2}
   sentences:
   - character: {fileID: 11400000, guid: 726cf27b05019ec4f8efa00ebf9d3985, type: 2}
     text: "\xBFTan valioso soy?"
-  - character: {fileID: 11400000, guid: cc5b5a8b9ee32954593050065091b92e, type: 2}
+  - character: {fileID: 11400000, guid: 15df0085de8554d478fc2b4477e21d0c, type: 2}
     text: "Es puente y ra\xEDz. Caja a medida, etiqueta discreta, acceso restringido.
       Custodia, ergo vivo"
