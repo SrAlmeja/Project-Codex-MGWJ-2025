@@ -12,18 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e13e01f58019a4b14b8aab03af3f6763, type: 3}
   m_Name: 01CuartoDialog_FraileNPC 2
   m_EditorClassIdentifier: 
-  leftCharacter: {fileID: 11400000, guid: cc5b5a8b9ee32954593050065091b92e, type: 2}
-  rightCharacter: {fileID: 11400000, guid: 5e16f97705d43c047a3bfa0e6add9f1e, type: 2}
+  leftCharacter: {fileID: 11400000, guid: 7e0d81cbfb5369e40a12d51097b83c81, type: 2}
+  rightCharacter: {fileID: 11400000, guid: 8e56625102efce94788468e00c8a1386, type: 2}
   sentences:
-  - character: {fileID: 11400000, guid: 5e16f97705d43c047a3bfa0e6add9f1e, type: 2}
+  - character: {fileID: 11400000, guid: 8e56625102efce94788468e00c8a1386, type: 2}
     text: "\xBFLe preocupa m\xE1s la traducci\xF3n o la fidelidad a quienes se lo
       contaron?\r"
-  - character: {fileID: 11400000, guid: cc5b5a8b9ee32954593050065091b92e, type: 2}
+  - character: {fileID: 11400000, guid: 15df0085de8554d478fc2b4477e21d0c, type: 2}
     text: "Ambas. Este libro naci\xF3 en la boca de los abuelos k\u2019iche\u2019,
       no en mi mesa. Yo solo presto papel y paciencia. Por eso anoto en castellano
       al lado, sin pisar el pulso original. \u201CCoraz\xF3n del Cielo\u201D y \u201CCoraz\xF3n
       de la Tierra\u201D deben sonar como consejo, no como decreto."
-  - character: {fileID: 11400000, guid: 5e16f97705d43c047a3bfa0e6add9f1e, type: 2}
+  - character: {fileID: 11400000, guid: a9666151fd56cc0498d60c85af3adade, type: 2}
     text: "Siempre me intrig\xF3 la parte de los primeros intentos de crear al ser
       humano."
   - character: {fileID: 11400000, guid: cc5b5a8b9ee32954593050065091b92e, type: 2}
