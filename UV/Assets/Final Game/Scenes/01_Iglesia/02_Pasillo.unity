@@ -5389,6 +5389,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableTag: Player
   interactionRequestEvent: {fileID: 11400000, guid: 303857d2d9552400384b2c2081589100, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: 7006ea6ea12a2e048827c85c34b07787, type: 2}
+  affectChildrenSpriteRenderers: 1
 --- !u!1 &6221424850617694632
 GameObject:
   m_ObjectHideFlags: 0

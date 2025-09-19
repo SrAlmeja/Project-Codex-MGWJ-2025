@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e13e01f58019a4b14b8aab03af3f6763, type: 3}
   m_Name: 01CuartoDialog_Fuente 1
   m_EditorClassIdentifier: 
-  leftCharacter: {fileID: 11400000, guid: cc5b5a8b9ee32954593050065091b92e, type: 2}
-  rightCharacter: {fileID: 11400000, guid: cc5b5a8b9ee32954593050065091b92e, type: 2}
+  leftCharacter: {fileID: 11400000, guid: 269dbec69920a2644ac9763eb28e59b7, type: 2}
+  rightCharacter: {fileID: 11400000, guid: 269dbec69920a2644ac9763eb28e59b7, type: 2}
   sentences:
-  - character: {fileID: 11400000, guid: cc5b5a8b9ee32954593050065091b92e, type: 2}
+  - character: {fileID: 11400000, guid: 269dbec69920a2644ac9763eb28e59b7, type: 2}
     text: "Esta fuente fue el hogar de muchas siestas en mi juventud.\r"
