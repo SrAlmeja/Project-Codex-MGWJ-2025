@@ -110,12 +110,12 @@ TextureImporter:
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 47
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -191,10 +191,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mzorca
+      name: Mazorca
       rect:
         serializedVersion: 2
-        x: 1000
+        x: 1003
         y: 1500
         width: 499
         height: 500
@@ -321,7 +321,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1500
-        y: 1000
+        y: 997
         width: 500
         height: 500
       alignment: 0
@@ -362,7 +362,7 @@ TextureImporter:
       name: Arbol Selva
       rect:
         serializedVersion: 2
-        x: 0
+        x: 3
         y: 500
         width: 500
         height: 500
@@ -384,7 +384,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 500
-        y: 500
+        y: 497
         width: 500
         height: 500
       alignment: 0
@@ -425,7 +425,7 @@ TextureImporter:
       name: Arena
       rect:
         serializedVersion: 2
-        x: 1500
+        x: 1503
         y: 500
         width: 500
         height: 500
@@ -443,7 +443,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas Mundo 1_14
+      name: Agujero
       rect:
         serializedVersion: 2
         x: 2000
@@ -548,7 +548,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas Mundo 1_19
+      name: Huella
       rect:
         serializedVersion: 2
         x: 2000
@@ -663,13 +663,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Agujero: -1006770608
       Arbol Selva: 1665394172
       Arbol Selva 2: -2099834607
       Arbusto Blanco: -461063628
       Arbusto Verde: 706766474
       Arena: 1876194202
-      Atlas Mundo 1_14: -1006770608
-      Atlas Mundo 1_19: 1550914218
       Cueva: -46648404
       Cueva Interior: 1487363173
       Escultura 2: -772644512
@@ -679,7 +678,8 @@ TextureImporter:
       Hoja 3: -822378442
       Hoja 4: 1512904405
       Hojas: 1659265710
-      Mzorca: -251759572
+      Huella: 1550914218
+      Mazorca: -251759572
       Pasto: 1503172818
       Pasto Alto: 869855859
       Tierra Final: 953995366
