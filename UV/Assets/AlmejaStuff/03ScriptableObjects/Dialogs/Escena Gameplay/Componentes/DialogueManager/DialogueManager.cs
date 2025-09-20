@@ -13,13 +13,19 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<Sentence> sentences;
 
+
+    public SOBoolean conversationFlag;
+
     private void Start()
     {
         this.sentences = new Queue<Sentence>();
+        conversationFlag.Value = false;
     }
 
     public void StartConversation(ConversationSO conversation)
     {
+        conversationFlag.Value = true;
+
         Debug.Log("Recibido, empezó la conversación");
         if (this.sentences.Count != 0)
             return;
@@ -68,6 +74,9 @@ public class DialogueManager : MonoBehaviour
         this.dialogueUI.EndConversation();
 
         if (this.onConversationEnded != null)
+        {
             this.onConversationEnded.Invoke();
+            conversationFlag.Value = false;
+        }
     }
 }
