@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkinChanger : PersistentSingleton<SkinChanger>
+public class SkinChanger : MonoBehaviour
 {
     #region Variables
 
@@ -24,14 +24,18 @@ public class SkinChanger : PersistentSingleton<SkinChanger>
     {
         TagSelector.OnTagSelectorReady -= HandleTagSelector;
     }
+    
+    /*
     private void Awake()
     {
         base.Awake();
     }
+    */
     
     private void Start()
     {
         InstantiateCharacters();
+        Debug.Log("skinchanger intentó inicializar personajes");
     }
     #endregion
     
@@ -41,6 +45,7 @@ public class SkinChanger : PersistentSingleton<SkinChanger>
     /// </summary>
     private void InstantiateCharacters()
     {
+        Debug.Log("skinchanger instanció personajes");
         foreach (var c in _characters)
         {
             if (c != null) Destroy(c);
@@ -60,30 +65,41 @@ public class SkinChanger : PersistentSingleton<SkinChanger>
     {
         Debug.Log($"[SkinChanger] Recibido tipo de jugador: {selector.PlayerType}");
 
-        foreach (var personaje in _characters)
+        if (selector.PlayerType != PlayerType.None)
         {
-            if (personaje != null)
-                personaje.SetActive(false);
-        }
-
-        ChangeSkin(selector.PlayerType);
-
-        if (_selectedCharacter != null)
-        {
-            _selectedCharacter.SetActive(true);
-
-            Vector3 spawnPosition = PlayerTransitionData.GetPosition();
-
-            foreach (var child in _selectedCharacter.GetComponentsInChildren<Transform>(true))
+            foreach (var personaje in _characters)
             {
-                if (child.CompareTag("Player"))
+                if (personaje != null)
+                    personaje.SetActive(false);
+            }
+
+            ChangeSkin(selector.PlayerType);
+
+            if (_selectedCharacter != null)
+            {
+                _selectedCharacter.SetActive(true);
+
+                Vector3 spawnPosition = PlayerTransitionData.GetPosition();
+
+                foreach (var child in _selectedCharacter.GetComponentsInChildren<Transform>(true))
                 {
-                    child.position = spawnPosition;
-                    Debug.Log($"[SkinChanger] Posicionado MainPlayer en: {spawnPosition}");
-                    break;
+                    if (child.CompareTag("Player"))
+                    {
+                        child.position = spawnPosition;
+                        Debug.Log($"[SkinChanger] Posicionado MainPlayer en: {spawnPosition}");
+                        break;
+                    }
                 }
             }
         }
+        else
+        {
+            foreach(var personaje in _characters)
+            {
+                personaje.SetActive(false);
+            }
+        }
+        
     }
     private void ChangeSkin(PlayerType type)
     {

@@ -879,6 +879,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  conversationFlag: {fileID: 11400000, guid: 8877a0478b445714eb9eedf43911f591, type: 2}
 --- !u!4 &1509252528
 Transform:
   m_ObjectHideFlags: 0
