@@ -2242,7 +2242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableTag: Player
   interactionRequestEvent: {fileID: 11400000, guid: 303857d2d9552400384b2c2081589100, type: 2}
-  highlightMaterial: {fileID: 2100000, guid: 9506cfe70399fea42b8c8d1b88d57981, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: 1a19e463aa0dbc44f9908dd840f567a6, type: 2}
   affectChildrenSpriteRenderers: 1
 --- !u!114 &1819240987
 MonoBehaviour:
@@ -2484,7 +2484,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 4.0208106}
+  m_Offset: {x: 0, y: 4.355703}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2495,7 +2495,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.2394886, y: 2.0568311}
+  m_Size: {x: 7.2394886, y: 1.3870456}
   m_EdgeRadius: 0
 --- !u!61 &2119946829
 BoxCollider2D:
