@@ -184,7 +184,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1447507932, guid: 48740d59b6ce44240a19d73d9ed6279e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1491,7 +1491,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: -252025317, guid: 48740d59b6ce44240a19d73d9ed6279e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1516,10 +1516,11 @@ GameObject:
   - component: {fileID: 1338862981}
   - component: {fileID: 1338862984}
   - component: {fileID: 1338862983}
+  - component: {fileID: 1338862986}
   - component: {fileID: 1338862985}
   m_Layer: 0
   m_Name: pluma_01
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1571,7 +1572,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.3491404, y: -1.3821712}
+  m_Offset: {x: -3.6905167, y: -1.6599622}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1582,7 +1583,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.7628093, y: 6.859062}
+  m_Size: {x: 6.159652, y: 4.557369}
   m_EdgeRadius: 0
 --- !u!212 &1338862982
 SpriteRenderer:
@@ -1648,7 +1649,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8508f1cf4a0bb47f18b2ff8c108ea4aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conversations: []
+  conversations:
+  - {fileID: 11400000, guid: b95e0b371a0cbf84390744d586a989d0, type: 2}
   nextIndex: 0
   conversationRequestEvent: {fileID: 11400000, guid: 39948954e3152b0458363a09a09159ce, type: 2}
 --- !u!114 &1338862984
@@ -1704,6 +1706,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conditionSet: {fileID: 11400000, guid: f51ab28676f92334aa12f5562e3c57af, type: 2}
   conditionID: PenFound
+--- !u!114 &1338862986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338862979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37cfb08bee793d449817915f062401df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableTag: Player
+  interactionRequestEvent: {fileID: 11400000, guid: 303857d2d9552400384b2c2081589100, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: d07e9ee4afbe5654199dc857d61e9690, type: 2}
+  affectChildrenSpriteRenderers: 1
 --- !u!1 &1369761919
 GameObject:
   m_ObjectHideFlags: 0
@@ -2093,7 +2111,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 2132683197, guid: 48740d59b6ce44240a19d73d9ed6279e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2327,7 +2345,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1894630122, guid: 48740d59b6ce44240a19d73d9ed6279e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
