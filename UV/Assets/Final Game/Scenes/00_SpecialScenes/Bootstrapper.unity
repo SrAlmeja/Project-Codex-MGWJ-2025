@@ -728,19 +728,7 @@ MonoBehaviour:
         asset: {fileID: 102900000, guid: deb48cadc6bdab343b764be11bb7847c, type: 3}
         guid: deb48cadc6bdab343b764be11bb7847c
       SceneType: 5
-  - GroupName: Cinematic3
-    Scenes:
-    - Reference:
-        asset: {fileID: 102900000, guid: 77c26021e9d81064ab3dc93e90e66a0b, type: 3}
-        guid: 77c26021e9d81064ab3dc93e90e66a0b
-      SceneType: 5
-  - GroupName: Credits
-    Scenes:
-    - Reference:
-        asset: {fileID: 102900000, guid: 33a43b27819285c4fb873045a23202cf, type: 3}
-        guid: 33a43b27819285c4fb873045a23202cf
-      SceneType: 5
-  - GroupName: Ixquic
+  - GroupName: IxquicP1
     Scenes:
     - Reference:
         asset: {fileID: 102900000, guid: eb5dab6aa5aa3d3459d879058dfc45ab, type: 3}
@@ -758,6 +746,18 @@ MonoBehaviour:
         asset: {fileID: 102900000, guid: 36e24895adb4f444d9204461cf68b1e0, type: 3}
         guid: 36e24895adb4f444d9204461cf68b1e0
       SceneType: 0
+  - GroupName: Cinematic3
+    Scenes:
+    - Reference:
+        asset: {fileID: 102900000, guid: 77c26021e9d81064ab3dc93e90e66a0b, type: 3}
+        guid: 77c26021e9d81064ab3dc93e90e66a0b
+      SceneType: 5
+  - GroupName: Credits
+    Scenes:
+    - Reference:
+        asset: {fileID: 102900000, guid: 33a43b27819285c4fb873045a23202cf, type: 3}
+        guid: 33a43b27819285c4fb873045a23202cf
+      SceneType: 5
 --- !u!4 &1221533417
 Transform:
   m_ObjectHideFlags: 0

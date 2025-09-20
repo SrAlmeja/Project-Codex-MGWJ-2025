@@ -2151,7 +2151,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 10
-    functionName: 
+    functionName: EndCinematic
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
