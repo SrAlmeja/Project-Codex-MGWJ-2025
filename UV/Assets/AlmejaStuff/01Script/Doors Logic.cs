@@ -109,7 +109,7 @@ public class DoorsLogic : MonoBehaviour
         }
     }
 
-    private void NextLevel(string sceneGroupName)
+    public void NextLevel(string sceneGroupName)
     {
         SceneLoaderV2.Instance.LoadSceneGroupByName(sceneGroupName);
     }
