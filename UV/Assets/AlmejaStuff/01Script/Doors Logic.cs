@@ -1,5 +1,4 @@
-using System;
-using System.Collections;
+using UnityEngine.Events;
 using System.Collections.Generic;
 using UnityEngine;
 using Eflatun.SceneReference;
@@ -19,9 +18,13 @@ public class DoorsLogic : MonoBehaviour
 
     [Header("NextLevel")]
     [SerializeField] private string sceneGroupName;
+    
+    private bool _nextLevelCondition = false;
+    
+    [Header("Evento personalizado")]
+    [SerializeField] private bool useCustomActionEvent;
+    [SerializeField] private UnityEvent CustomActionEvent;
 
-    [Header("Flag a setear cuando el objeto quede activo")]
-    public GlobalBoolFlag completionFlag; // ⟵ Reemplazo de SOBoolean nextLevelReady
 
     private bool _isOnArea;
     private GameObject _player;
@@ -72,17 +75,21 @@ public class DoorsLogic : MonoBehaviour
         _player = other.gameObject;
 
         // 1. Si hay un nombre de escena válido Y el flag global está en TRUE -> ir al siguiente nivel
-        if (!string.IsNullOrEmpty(sceneGroupName) && completionFlag != null && completionFlag.Value)
+        if (!string.IsNullOrEmpty(sceneGroupName) && _nextLevelCondition)
         {
             Debug.Log("Se llamó NextLevel");
+
+            CustomActionEvent?.Invoke(); // ⟵ Ejecuta el evento personalizado
             NextLevel(sceneGroupName);
             return;
         }
-
+        
         // 2. Si NO hay puerta -> ejecutar acción automáticamente
         if (noDoor)
         {
             Debug.Log("No hay puerta");
+            CustomAction();
+            
             TurnOnScene();
             TurnOffScene();
             return;
@@ -90,8 +97,8 @@ public class DoorsLogic : MonoBehaviour
 
         // 3. Si HAY puerta -> esperar interacción
         Debug.Log("Hay puerta");
-        _isOnArea = true; 
-
+        _isOnArea = true;
+        
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -120,12 +127,28 @@ public class DoorsLogic : MonoBehaviour
         
         if (_player != null) PlayerTransitionData.SavePosition(_player.transform.position);
 
+        CustomAction();
+
         TurnOnScene();
         TurnOffScene();
     }
 
     #region Scene Logic
 
+    private void CustomAction()
+    {
+        if (useCustomActionEvent)
+        {
+            Debug.Log("Ejecutando evento personalizado antes de cambiar de escena");
+            CustomActionEvent?.Invoke();
+        }
+    }
+
+    public void LevelConditional()
+    {
+        _nextLevelCondition = true;
+    }
+    
     private void TurnOnScene()
     {
         foreach (var obj in GetSceneElements(sceneToEnable))
@@ -147,7 +170,7 @@ public class DoorsLogic : MonoBehaviour
         }
     }
 
-    private void NextLevel(string sceneGroupName)
+    public void NextLevel(string sceneGroupName)
     {
         SceneLoaderV2.Instance.LoadSceneGroupByName(sceneGroupName);
     }
