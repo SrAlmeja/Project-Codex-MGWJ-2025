@@ -3582,7 +3582,7 @@ PrefabInstance:
       objectReference: {fileID: 1581686207}
     - target: {fileID: 5690084151996467341, guid: e6d5e8f43e72ca848b47ed99f9794f5d, type: 3}
       propertyPath: sceneGroupName
-      value: ChurchCinematic
+      value: Cinematic1
       objectReference: {fileID: 0}
     - target: {fileID: 5690084151996467341, guid: e6d5e8f43e72ca848b47ed99f9794f5d, type: 3}
       propertyPath: highlightMaterial

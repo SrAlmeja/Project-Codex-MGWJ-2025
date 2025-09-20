@@ -21,5 +21,6 @@ public enum PlayerType
     Raton,
     Ixquic,
     Hunampu,
-    Ixbalanque
+    Ixbalanque,
+    None
 }
