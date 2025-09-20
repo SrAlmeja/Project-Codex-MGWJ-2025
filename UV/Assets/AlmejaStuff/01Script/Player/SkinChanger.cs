@@ -59,7 +59,8 @@ public class SkinChanger : PersistentSingleton<SkinChanger>
     private void HandleTagSelector(TagSelector selector)
     {
         Debug.Log($"[SkinChanger] Recibido tipo de jugador: {selector.PlayerType}");
-
+        
+        
         foreach (var personaje in _characters)
         {
             if (personaje != null)
