@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Final Game/Scenes/00_SpecialScenes/Bootstrapper.unity
     guid: 9bae6c4b74c375344a24340ddc540830
   - enabled: 1
