@@ -13999,6 +13999,7 @@ GameObject:
   - component: {fileID: 2007728959}
   - component: {fileID: 2007728958}
   - component: {fileID: 2007728960}
+  - component: {fileID: 2007728964}
   - component: {fileID: 2007728963}
   - component: {fileID: 2007728962}
   - component: {fileID: 2007728961}
@@ -14140,8 +14141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversations:
-  - {fileID: 11400000, guid: 1601a8edb579c9d46a701195174f9c41, type: 2}
-  - {fileID: 11400000, guid: 3ca84b73bded15a41987ebf266cb322b, type: 2}
+  - {fileID: 11400000, guid: 87be3d80a221cdb488d2531e3c7ffd1c, type: 2}
   nextIndex: 0
   conversationRequestEvent: {fileID: 11400000, guid: 39948954e3152b0458363a09a09159ce, type: 2}
 --- !u!114 &2007728963
@@ -14171,6 +14171,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!61 &2007728964
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007728957}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0050418377, y: -0.22341186}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.0002441, y: 1}
+    newSize: {x: 1.0002441, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.1079178, y: 1.4468237}
+  m_EdgeRadius: 0
 --- !u!1 &2008047034
 GameObject:
   m_ObjectHideFlags: 0
