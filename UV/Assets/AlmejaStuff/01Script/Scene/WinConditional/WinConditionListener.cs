@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class WinConditionListener : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private WinConditionalSet conditionSet;
+    [SerializeField] private string conditionID;
+
+    public void TriggerCondition()
     {
-        
+        conditionSet.MarkCompleted(conditionID);
+        print("El concicional " + conditionID + " ha sido completado");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

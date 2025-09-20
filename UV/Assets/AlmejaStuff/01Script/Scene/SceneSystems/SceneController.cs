@@ -24,9 +24,9 @@ public class SceneController : MonoBehaviour
     /// <summary>
     /// Load scene by name.
     /// </summary>
-    public void LoadScene(string sceneName, LoadSceneMode mode = LoadSceneMode.Single)
+    public void LoadScene(string sceneName/*, LoadSceneMode mode = LoadSceneMode.Single*/)
     {
-        SceneManager.LoadScene(sceneName, mode);
+        SceneManager.LoadScene(sceneName/*, mode*/);
     }
 
     /// <summary>

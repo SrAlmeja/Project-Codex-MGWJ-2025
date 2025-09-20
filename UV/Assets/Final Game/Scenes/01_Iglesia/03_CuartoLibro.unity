@@ -3044,6 +3044,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableTag: Player
   interactionRequestEvent: {fileID: 11400000, guid: 303857d2d9552400384b2c2081589100, type: 2}
+  highlightMaterial: {fileID: 0}
+  affectChildrenSpriteRenderers: 1
 --- !u!114 &598193263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5109,7 +5111,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1157908240
 Transform:
   m_ObjectHideFlags: 0
@@ -6670,6 +6672,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableTag: Player
   interactionRequestEvent: {fileID: 11400000, guid: 303857d2d9552400384b2c2081589100, type: 2}
+  highlightMaterial: {fileID: 0}
+  affectChildrenSpriteRenderers: 1
 --- !u!114 &1805310754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7637,6 +7641,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableTag: Player
   interactionRequestEvent: {fileID: 11400000, guid: 303857d2d9552400384b2c2081589100, type: 2}
+  highlightMaterial: {fileID: 0}
+  affectChildrenSpriteRenderers: 1
 --- !u!114 &2125556879
 MonoBehaviour:
   m_ObjectHideFlags: 0
