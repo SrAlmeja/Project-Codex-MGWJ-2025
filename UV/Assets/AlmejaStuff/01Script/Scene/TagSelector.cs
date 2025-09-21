@@ -8,7 +8,7 @@ public class TagSelector : MonoBehaviour
     [HideInInspector] public PlayerType PlayerType => playerType;
     public static event Action<TagSelector> OnTagSelectorReady;
 
-    private void Start()
+    private void OnEnable()
     {
         Debug.Log($"[TagSelector] Evento OnTagSelectorReady disparado con tipo: {playerType}");
         OnTagSelectorReady?.Invoke(this);
