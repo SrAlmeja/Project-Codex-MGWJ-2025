@@ -179,10 +179,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Producer, Programmer\nAngel Legorreta Gonzalez\n\nGame Developer, 3D Generalist\nHamid
-    Eduardo Riba Ram\xEDrez\n\nMusical Producer Leader\nPaola Sandoval Mart\xEDnez\n\nProduct
-    Manager, Artist & Co-Art Director\nAlma Yesenia Hern\xE1ndez\n\nHistorical Consultant\nKaren
-    Itzel Benitez Ya\xF1ez\n\nGame Designer, Artist\nLuis Lira\n\n"
+  m_text: "ART CREW\n\nArt Director\nDiana Laura Escobar Comas\n\nProject Manager,
+    Artist & Co-Art Director\nAlma Yesenia Hern\xE1ndez Hern\xE1ndez\n\nArtist, Music
+    Composer & Sound Director\nPaola Sandoval Mart\xEDnez\n\nArtist\nIrving Flores
+    Garc\xEDa\n\nGame Designer, Artist\nLuis Lira\n\nHISTORICAL RESERCH & CONSULTING\n\nHistorical
+    Consultant & Reserch Director\nJoselyn Xanatt L\xF3pez Valencia\nHistorical Consultant\nKaren
+    Itzel Benitez Ya\xF1ez\n\nPROGRAMMING CREW\n\nGame Director & Programmer\nAngel
+    Gabriel Legorreta Gonzalez\n\nProgrammer\nHamid Eduardo Riba Ram\xEDrez\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

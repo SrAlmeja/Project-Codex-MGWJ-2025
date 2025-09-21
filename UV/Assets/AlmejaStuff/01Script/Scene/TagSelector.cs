@@ -10,7 +10,8 @@ public class TagSelector : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log($"[TagSelector] Evento OnTagSelectorReady disparado con tipo: {playerType}");
+        Debug.Log($"[TagSelector] Activado: {gameObject.name} con tipo: {playerType}");
+
         OnTagSelectorReady?.Invoke(this);
     }
 }
