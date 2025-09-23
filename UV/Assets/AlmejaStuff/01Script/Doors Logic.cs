@@ -9,6 +9,9 @@ public class DoorsLogic : MonoBehaviour
 {
     #region Variables
 
+    [Header("Tecla E")]
+    public GameObject eKey; //Tecla que indica que el jugador debe de presionar la tecla E para interactuar
+
     [Header("Scene Transition")]
     [SerializeField] private InputActionReference interact;
     [SerializeField] private SceneReference sceneToEnable;
@@ -46,6 +49,8 @@ public class DoorsLogic : MonoBehaviour
 
     private void Awake()
     {
+        eKey.SetActive(false);
+
         if (targetObject != null)
         {
             _targetRenderers = targetObject.GetComponentsInChildren<SpriteRenderer>(true);
@@ -105,6 +110,8 @@ public class DoorsLogic : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            eKey.SetActive(true);
+
             if (highlightMaterial != null)
                 ApplyHighlightToTarget();
         }
@@ -114,6 +121,8 @@ public class DoorsLogic : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            eKey.SetActive(false);
+
             _isOnArea = false;
             RestoreTargetMaterials();
         }

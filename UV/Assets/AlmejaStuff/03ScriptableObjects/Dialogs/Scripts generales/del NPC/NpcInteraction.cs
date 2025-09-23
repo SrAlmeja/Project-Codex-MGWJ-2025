@@ -7,6 +7,9 @@ public class NpcInteraction : MonoBehaviour
     [Header("Configuration")]
     public string interactableTag;
 
+    [Header("Tecla E")]
+    public GameObject eKey; //Tecla que indica que el jugador debe de presionar la tecla E para interactuar
+
     [Header("Broadcasting events")]
     public BoolGameEvent interactionRequestEvent;
 
@@ -24,6 +27,8 @@ public class NpcInteraction : MonoBehaviour
 
     private void Awake()
     {
+        eKey.SetActive(false);
+
         _selfRenderers = affectChildrenSpriteRenderers
             ? GetComponentsInChildren<SpriteRenderer>(true)
             : new[] { GetComponent<SpriteRenderer>() };
@@ -50,8 +55,11 @@ public class NpcInteraction : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+
         if (collision.CompareTag(interactableTag))
         {
+            eKey.SetActive(true);
+
             if (highlightMaterial != null)
                 ApplyHighlightToSelf();
         }
@@ -61,6 +69,8 @@ public class NpcInteraction : MonoBehaviour
     {
         if (collision.CompareTag(interactableTag))
         {
+            eKey.SetActive(false);
+
             this._interactable = null;
             RestoreSelfMaterials();
         }
