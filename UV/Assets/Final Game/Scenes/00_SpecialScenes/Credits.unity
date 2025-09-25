@@ -156,7 +156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11.692, y: 8.0657}
+  m_AnchoredPosition: {x: 11.7, y: -161}
   m_SizeDelta: {x: 1943.4, y: 1096.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &60965831
@@ -183,19 +183,20 @@ MonoBehaviour:
     Artist & Co-Art Director\nAlma Yesenia Hern\xE1ndez Hern\xE1ndez\n\nArtist, Music
     Composer & Sound Director\nPaola Sandoval Mart\xEDnez\n\nArtist\nIrving Flores
     Garc\xEDa\n\nGame Designer, Artist\nLuis Lira\n\nHISTORICAL RESERCH & CONSULTING\n\nHistorical
-    Consultant & Reserch Director\nJoselyn Xanatt L\xF3pez Valencia\nHistorical Consultant\nKaren
-    Itzel Benitez Ya\xF1ez\n\nPROGRAMMING CREW\n\nGame Director & Programmer\nAngel
-    Gabriel Legorreta Gonzalez\n\nProgrammer\nHamid Eduardo Riba Ram\xEDrez\n\n"
+    Consultant & Reserch Director\nJoselyn Xanatt L\xF3pez Valencia\n\nHistorical
+    Consultant\nKaren Itzel Benitez Ya\xF1ez\n\nHistorical Consultant\nMauricio Armando
+    Aguilar Tellez\n\nPROGRAMMING CREW\n\nGame Director & Programmer\nAngel Gabriel
+    Legorreta Gonzalez\n\nProgrammer\nHamid Eduardo Riba Ram\xEDrez\n\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 839486864cd43e94791985661673e5a6, type: 2}
+  m_sharedMaterial: {fileID: -2748504498454937597, guid: 839486864cd43e94791985661673e5a6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4280560975
+  m_fontColor: {r: 0.31132078, g: 0.17478208, b: 0.14244395, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -608,7 +609,7 @@ GameObject:
   - component: {fileID: 1144634203}
   - component: {fileID: 1144634202}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -646,7 +647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.9058824, g: 0.8745099, b: 0.82745105, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
