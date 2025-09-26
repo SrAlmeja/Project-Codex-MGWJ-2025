@@ -29,6 +29,26 @@ public class SkinChanger : MonoBehaviour
     #region SkinChanger Functions
     
     
+    /// <summary>
+    /// Coloca todos los hijos de este GameObject en la posición (0,0,0)
+    /// </summary>
+    private void RestartPosition()
+    {
+        foreach (var child in _selectedCharacter.GetComponentsInChildren<Transform>(true))
+        {
+            Vector3 spawnPosition = PlayerTransitionData.ResetPosition();
+            if (child.CompareTag("Player"))
+            {
+                child.position = Vector3.zero;
+                Debug.Log($"[SkinChanger] Posicionado nuevo personaje en: 0,0,0");
+                break;
+            }
+        }
+
+        Debug.Log("[SkinChanger] Todos los hijos fueron reiniciados a posición (0,0,0)");
+    }
+
+    
     private void HandleTagSelector(TagSelector selector)
     {
         Debug.Log($"[SkinChanger] Recibido tipo de jugador: {selector.PlayerType}");
@@ -125,6 +145,7 @@ public class SkinChanger : MonoBehaviour
 
         _selectedCharacter = characterReferences[index];
         Debug.Log($"[SkinChanger] Activado personaje: {_selectedCharacter.name}");
+        RestartPosition();
     }
     #endregion
 }

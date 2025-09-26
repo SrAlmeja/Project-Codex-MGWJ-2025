@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 namespace Systems.SceneManagement
 {
-    public class SceneLoaderV2 : PersistentSingleton<SceneLoaderV2>
+    public class SceneLoaderV2 : MonoBehaviour
     {
         #region Singleton
         public static SceneLoaderV2 Instance { get; private set; }
@@ -30,7 +30,7 @@ namespace Systems.SceneManagement
 
         void Awake()
         {
-            base.Awake();
+            MakeMePersistent();
             Manager = new SceneGroupManager(this);
             Manager.OnSceneGroupLoaded += OnGroupLoaded;
         }
@@ -42,6 +42,18 @@ namespace Systems.SceneManagement
                 return;
             }
             LoadSceneGroupByName(scenesToLoad[0].GroupName);
+        }
+        
+        private void MakeMePersistent()
+        {
+            if (Instance != null && Instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         
         void Update()

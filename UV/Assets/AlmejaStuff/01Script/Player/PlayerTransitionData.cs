@@ -24,4 +24,8 @@ public static class PlayerTransitionData
         return LastPlayerPosition;
     }
 
+    public static Vector3 ResetPosition()
+    {
+        return LastPlayerPosition = Vector3.zero;
+    }
 }
