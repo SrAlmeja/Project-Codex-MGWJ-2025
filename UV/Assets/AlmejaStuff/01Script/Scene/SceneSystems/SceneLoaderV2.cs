@@ -3,6 +3,7 @@ using System.Collections;
 using Systems.SceneManagment;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace Systems.SceneManagement
 {
@@ -11,7 +12,6 @@ namespace Systems.SceneManagement
         #region Singleton
         public static SceneLoaderV2 Instance { get; private set; }
         #endregion
-
         #region Serialized Fields
         [SerializeField, Header("Loading Stuff")] private Image loadingBar;
         [SerializeField] private float fillSpeed = 0.5f;
@@ -19,7 +19,6 @@ namespace Systems.SceneManagement
         [SerializeField] private Camera loadingCamera;
         [SerializeField, Header("Scenes Reference")] private SceneGroup[] scenesToLoad;
         #endregion
-
         #region Internal State
         private LoadingProgress _progress;
         private float _targetProgress;
@@ -27,7 +26,6 @@ namespace Systems.SceneManagement
         private int _idx;
         private SceneGroupManager Manager;
         #endregion
-
         #region Unity Functions
 
         void Awake()
@@ -45,6 +43,7 @@ namespace Systems.SceneManagement
             }
             LoadSceneGroupByName(scenesToLoad[0].GroupName);
         }
+        
         private void MakeMePersistent()
         {
             if (Instance != null && Instance != this)
@@ -56,10 +55,89 @@ namespace Systems.SceneManagement
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
+        
+        void Update()
+        {
+            if (_isLoading) return;
+            
+            float current = loadingBar.fillAmount;
+            float smoothed = Mathf.SmoothStep(current, _targetProgress, Time.deltaTime * fillSpeed);
+            loadingBar.fillAmount = smoothed;
+        }
 
         #endregion
-        
         #region LoaderFunctions
+        #region SceneController
+        /// <summary>
+        /// Load scene by name.
+        /// </summary>
+        public void LoadScene(string sceneName/*, LoadSceneMode mode = LoadSceneMode.Single*/)
+        {
+            SceneManager.LoadScene(sceneName/*, mode*/);
+        }
+        /// <summary>
+        /// A public method to load a scene from a button.
+        /// </summary>
+        /// <param name="sceneName"></param>
+        public void LoadSceneFromButton(string sceneName)
+        {
+            SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        }    
+        /// <summary>
+        /// Reload current active scene.
+        /// </summary>
+        public void ReloadCurrentScene()
+        {
+            Scene current = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(current.name);
+        }
+
+        /// <summary>
+        /// Load scene asynchronously with optional delay or loading screen.
+        /// </summary>
+        public void LoadSceneAsync(string sceneName, LoadSceneMode mode = LoadSceneMode.Single)
+        {
+            StartCoroutine(AsyncScene(sceneName, mode));
+        }
+    
+        public void CloseApplication()
+        {
+            Application.Quit();
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false; // Stop playing in the editor
+#endif
+        }
+    
+        private IEnumerator AsyncScene(string sceneName, LoadSceneMode mode = LoadSceneMode.Single)
+        {
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, mode);
+            asyncLoad.allowSceneActivation = true;
+            while (!asyncLoad.isDone)
+            {
+                yield return null;
+            }
+        }
+        
+        private IEnumerator LoadSingleSceneCoroutine(string sceneName)
+        {
+            loadingBar.fillAmount = 0;
+            _targetProgress = 0;
+            EnableLoadingCanvas(true);
+
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
+            asyncLoad.allowSceneActivation = true;
+
+            while (!asyncLoad.isDone)
+            {
+                _targetProgress = Mathf.Clamp01(asyncLoad.progress / 0.9f);
+                yield return null;
+            }
+
+            EnableLoadingCanvas(false);
+        }
+
+        #endregion
+        #region ByGroup
         public void LoadSceneGroupByName(string groupName)
         {
             _idx = Array.FindIndex(scenesToLoad, g => g.GroupName == groupName);
@@ -83,6 +161,9 @@ namespace Systems.SceneManagement
             
             yield return StartCoroutine(Manager.LoadSceneCoroutine(scenesToLoad[index], _progress));
         }
+        #endregion
+        #endregion
+        #region UI Functions
         void EnableLoadingCanvas(bool enable = true)
         {
             _isLoading = enable;

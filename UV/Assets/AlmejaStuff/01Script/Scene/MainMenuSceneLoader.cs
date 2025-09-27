@@ -6,13 +6,18 @@ public class MainMenuSceneLoader : MonoBehaviour
     #region Variables
     [Header("Scene Group Name"), SerializeField]
     private string sceneGroupName;
-    [SerializeField] private int sceneGroupIndex;
     
     #endregion
     
     public void OnStartNGame()
     {
-        //Debug.Log($"[Menu] ▶ New Game: {sceneGroupName}");
+        if (SceneLoaderV2.Instance == null)
+        {
+            Debug.LogError("SceneLoaderV2.Instance es null. ¿Se ejecutó Awake?");
+            return;
+        }
+
         SceneLoaderV2.Instance.LoadSceneGroupByName(sceneGroupName);
     }
+
 }

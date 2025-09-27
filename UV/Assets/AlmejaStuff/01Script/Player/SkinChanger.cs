@@ -5,15 +5,14 @@ public class SkinChanger : MonoBehaviour
 {
     #region Variables
 
-    [Header("Characters Prefabs")]
-    [SerializeField] private List<GameObject> characterPrefabs; // Prefabs originales
-    
-    private List<GameObject> _characters = new(); // Instancias activas
+    [Header("Personajes en escena")]
+    [SerializeField] private List<GameObject> characterReferences;
+
     private GameObject _selectedCharacter;
     
     #endregion
 
-    #region Unity Functions
+    #region Suscriptions
 
     private void OnEnable()
     {
@@ -25,82 +24,106 @@ public class SkinChanger : MonoBehaviour
         TagSelector.OnTagSelectorReady -= HandleTagSelector;
     }
     
-    /*
-    private void Awake()
-    {
-        base.Awake();
-    }
-    */
-    
-    private void Start()
-    {
-        InstantiateCharacters();
-        Debug.Log("skinchanger intent� inicializar personajes");
-    }
     #endregion
     
     #region SkinChanger Functions
+    
+    
     /// <summary>
-    /// Instancia todos los personajes y los desactiva.
+    /// Coloca todos los hijos de este GameObject en la posición (0,0,0)
     /// </summary>
-    private void InstantiateCharacters()
+    private void RestartPosition()
     {
-        Debug.Log("skinchanger instanci� personajes");
-        foreach (var c in _characters)
+        foreach (var child in _selectedCharacter.GetComponentsInChildren<Transform>(true))
         {
-            if (c != null) Destroy(c);
+            Vector3 spawnPosition = PlayerTransitionData.ResetPosition();
+            if (child.CompareTag("Player"))
+            {
+                child.position = Vector3.zero;
+                Debug.Log($"[SkinChanger] Posicionado nuevo personaje en: 0,0,0");
+                break;
+            }
         }
-        _characters.Clear();
 
-        foreach (var prefab in characterPrefabs)
-        {
-            if (prefab == null) continue;
-
-            var instance = Instantiate(prefab, Vector3.zero, Quaternion.identity);
-            instance.SetActive(false);
-            _characters.Add(instance);
-        }
+        Debug.Log("[SkinChanger] Todos los hijos fueron reiniciados a posición (0,0,0)");
     }
+
+    
     private void HandleTagSelector(TagSelector selector)
     {
         Debug.Log($"[SkinChanger] Recibido tipo de jugador: {selector.PlayerType}");
 
+        // Guardar posición del personaje actual antes de cambiar
+        if (_selectedCharacter != null)
+        {
+            foreach (var child in _selectedCharacter.GetComponentsInChildren<Transform>(true))
+            {
+                if (child.CompareTag("Player"))
+                {
+                    PlayerTransitionData.SavePosition(child.position);
+                    Debug.Log($"[SkinChanger] Posición guardada desde personaje anterior: {child.position}");
+                    break;
+                }
+            }
+        }
+
+        // Desactivar todos los personajes
+        foreach (var personaje in characterReferences)
+        {
+            if (personaje != null)
+                personaje.SetActive(false);
+        }
+
+        // Si el tipo no es None, activar el nuevo personaje
         if (selector.PlayerType != PlayerType.None)
         {
-            foreach (var personaje in _characters)
-            {
-                if (personaje != null)
-                    personaje.SetActive(false);
-            }
-
             ChangeSkin(selector.PlayerType);
 
             if (_selectedCharacter != null)
             {
-                _selectedCharacter.SetActive(true);
-
                 Vector3 spawnPosition = PlayerTransitionData.GetPosition();
+
+                _selectedCharacter.SetActive(true);
 
                 foreach (var child in _selectedCharacter.GetComponentsInChildren<Transform>(true))
                 {
                     if (child.CompareTag("Player"))
                     {
                         child.position = spawnPosition;
-                        Debug.Log($"[SkinChanger] Posicionado MainPlayer en: {spawnPosition}");
+                        Debug.Log($"[SkinChanger] Posicionado nuevo personaje en: {spawnPosition}");
                         break;
                     }
                 }
             }
         }
-        else
+    }
+
+    private void GetPosition()
+    {
+        
+        
+        Vector3 spawnPosition = PlayerTransitionData.GetPosition();
+
+        if (_selectedCharacter.CompareTag("Player"))
         {
-            foreach(var personaje in _characters)
+            _selectedCharacter.transform.position = spawnPosition;
+            Debug.Log($"[SkinChanger] Posicionado personaje principal en: {spawnPosition}");
+            return;
+        }
+
+        foreach (var child in _selectedCharacter.GetComponentsInChildren<Transform>(true))
+        {
+            if (child.CompareTag("Player"))
             {
-                personaje.SetActive(false);
+                child.position = spawnPosition;
+                Debug.Log($"[SkinChanger] Posicionado hijo con tag Player en: {spawnPosition}");
+                return;
             }
         }
-        
+
+        Debug.LogWarning("[SkinChanger] No se encontró objeto con tag Player");
     }
+
     private void ChangeSkin(PlayerType type)
     {
         int index = type switch
@@ -109,28 +132,20 @@ public class SkinChanger : MonoBehaviour
             PlayerType.Raton       => 1,
             PlayerType.Ixquic      => 2,
             PlayerType.Hunampu     => 3,
-            PlayerType.Ixbalanque  => 4,
-            _ => 0
+            PlayerType.None        => -1,
+            _ => -1
+
         };
 
-        if (index < 0 || index >= _characters.Count)
+        if (index < 0 || index >= characterReferences.Count)
         {
             Debug.LogError($"No hay personaje asignado para {type}");
             return;
         }
 
-        for (int i = 0; i < _characters.Count; i++)
-        {
-            if (_characters[i] == null) continue;
-
-            bool esSeleccionado = i == index;
-            _characters[i].SetActive(esSeleccionado);
-
-            if (esSeleccionado)
-                _selectedCharacter = _characters[i];
-        }
-
+        _selectedCharacter = characterReferences[index];
         Debug.Log($"[SkinChanger] Activado personaje: {_selectedCharacter.name}");
+        RestartPosition();
     }
     #endregion
 }

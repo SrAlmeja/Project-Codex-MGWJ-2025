@@ -85,7 +85,7 @@ namespace Systems.SceneManagment
                 var s = SceneManager.GetSceneAt(i);
                 if (!s.isLoaded) continue;
                 
-                if (s.name == _active || s.name == "Bootstrapper" || s.name == "PersistantPlayer" || s.name == "UI") continue;
+                if (s.name == _active || s.name == "Bootstrapper") continue;
                 
                 _toUnload.Add(s.name);
             }
