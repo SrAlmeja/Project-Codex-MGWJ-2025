@@ -791,12 +791,6 @@ MonoBehaviour:
         asset: {fileID: 102900000, guid: 36e24895adb4f444d9204461cf68b1e0, type: 3}
         guid: 36e24895adb4f444d9204461cf68b1e0
       SceneType: 4
-  - GroupName: Cinematic3
-    Scenes:
-    - Reference:
-        asset: {fileID: 102900000, guid: 77c26021e9d81064ab3dc93e90e66a0b, type: 3}
-        guid: 77c26021e9d81064ab3dc93e90e66a0b
-      SceneType: 5
   - GroupName: Credits
     Scenes:
     - Reference:
