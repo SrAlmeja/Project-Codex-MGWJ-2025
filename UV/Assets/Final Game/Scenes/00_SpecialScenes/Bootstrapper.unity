@@ -754,7 +754,7 @@ MonoBehaviour:
     - Reference:
         asset: {fileID: 102900000, guid: 36e24895adb4f444d9204461cf68b1e0, type: 3}
         guid: 36e24895adb4f444d9204461cf68b1e0
-      SceneType: 0
+      SceneType: 4
   - GroupName: ChurchCinematic
     Scenes:
     - Reference:
@@ -787,6 +787,10 @@ MonoBehaviour:
         asset: {fileID: 102900000, guid: d17df23ed8f77aa4f885c63af6a837e1, type: 3}
         guid: d17df23ed8f77aa4f885c63af6a837e1
       SceneType: 6
+    - Reference:
+        asset: {fileID: 102900000, guid: 36e24895adb4f444d9204461cf68b1e0, type: 3}
+        guid: 36e24895adb4f444d9204461cf68b1e0
+      SceneType: 4
   - GroupName: Cinematic3
     Scenes:
     - Reference:
