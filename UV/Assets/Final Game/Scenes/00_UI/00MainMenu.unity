@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3284d519c3674f4cad2c11a01d94e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneGroupName: IxquicP1
+  sceneGroupName: Church
 --- !u!1 &120756813
 GameObject:
   m_ObjectHideFlags: 0
