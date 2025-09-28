@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e13e01f58019a4b14b8aab03af3f6763, type: 3}
+  m_Name: 01CuartoDialog_FraileNPC 3
+  m_EditorClassIdentifier: 
+  leftCharacter: {fileID: 11400000, guid: 6faea684acd15f9438a9c9a642ee1c15, type: 2}
+  rightCharacter: {fileID: 11400000, guid: 524c4722514ec2e47b1c9458ad67bd0b, type: 2}
+  sentences:
+  - character: {fileID: 11400000, guid: 6faea684acd15f9438a9c9a642ee1c15, type: 2}
+    text: "\xBFDe nuevo perd\xED mi pluma? Parece que no es s\xF3lo mi cuerpo, sino
+      tambi\xE9n mi mente est\xE1 cansada."
+  - character: {fileID: 11400000, guid: 524c4722514ec2e47b1c9458ad67bd0b, type: 2}
+    text: "\xBFNecesita algo, fray Xim\xE9nez? \xBFUn vaso de agua, tal vez?"
+  - character: {fileID: 11400000, guid: 466e568bfd584a44c8bf4e5e1a880cdb, type: 2}
+    text: "Te lo agradezco, pero ahora mismo tengo otro dilema. Extravi\xE9 mi \xFAltima
+      pluma apenas, \xBFpuedes creerlo?"
+  - character: {fileID: 11400000, guid: a9666151fd56cc0498d60c85af3adade, type: 2}
+    text: Su servidor puede ayudarle, si lo necesita y desea.
+  - character: {fileID: 11400000, guid: a0b3a502812e53d469bc20bc68e0cb77, type: 2}
+    text: "Antes, cuando sali\xF3 de su habitaci\xF3n lo hizo con las manos vac\xEDas.
+      Quiz\xE1 podr\xEDa recordar d\xF3nde la coloc\xF3, si busca en los lugares
+      que estuvo hoy."

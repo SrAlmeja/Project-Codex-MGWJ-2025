@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e13e01f58019a4b14b8aab03af3f6763, type: 3}
+  m_Name: 01CuartoDialog_FraileNPC 1
+  m_EditorClassIdentifier: 
+  leftCharacter: {fileID: 11400000, guid: 269dbec69920a2644ac9763eb28e59b7, type: 2}
+  rightCharacter: {fileID: 11400000, guid: a9666151fd56cc0498d60c85af3adade, type: 2}
+  sentences:
+  - character: {fileID: 11400000, guid: a9666151fd56cc0498d60c85af3adade, type: 2}
+    text: "\xA1Buenos d\xEDas Fray.! espero que haya descansado bien\u2026 S\xE9
+      que ya est\xE1 a nada de terminar el c\xF3dice que est\xE1 transcribiendo.\r"
+  - character: {fileID: 11400000, guid: 269dbec69920a2644ac9763eb28e59b7, type: 2}
+    text: "Buenos d\xEDas, hijo. El descanso es breve cuando la memoria de un pueblo
+      llama. S\xED, estamos cerca\u2026 pero en estas \xFAltimas p\xE1ginas la tinta
+      pesa el doble."
+  - character: {fileID: 11400000, guid: 08f2a1e5a56fbcb4b8917c86cd3b5f69, type: 2}
+    text: "\xBFEn qu\xE9 parte va ahora?"
+  - character: {fileID: 11400000, guid: 466e568bfd584a44c8bf4e5e1a880cdb, type: 2}
+    text: "En el pasaje donde los Gemelos descienden a Xibalb\xE1. No es solo aventura:
+      es ense\xF1anza. Hablan de ingenio frente al poder injusto, y de c\xF3mo la
+      vida sabe re\xEDrse de la muerte. Si traduzco mal, se tuerce el sentido; si
+      resumo de m\xE1s, se pierde la m\xFAsica."

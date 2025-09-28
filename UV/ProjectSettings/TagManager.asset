@@ -3,17 +3,23 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Interactable
+  - Wall
+  - Enemy
+  - BulletBall
+  - ViCam
+  - SceneElements
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Wall
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Player
+  - Interaction
+  - BulletBall
   - 
   - 
   - 
@@ -38,6 +44,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1675548261
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 4137162789
     locked: 0

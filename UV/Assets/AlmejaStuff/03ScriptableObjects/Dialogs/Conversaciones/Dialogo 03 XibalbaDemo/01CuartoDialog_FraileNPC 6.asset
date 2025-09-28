@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e13e01f58019a4b14b8aab03af3f6763, type: 3}
+  m_Name: 01CuartoDialog_FraileNPC 6
+  m_EditorClassIdentifier: 
+  leftCharacter: {fileID: 11400000, guid: 1e305b41ed9f8be46bcc52ac110ba113, type: 2}
+  rightCharacter: {fileID: 11400000, guid: f89765118788716429593870b25a3bd9, type: 2}
+  sentences:
+  - character: {fileID: 11400000, guid: c0dfe9314a37d60419b2f2461bf33ec3, type: 2}
+    text: "Detente\u2026 este s\xED es. Mira tus dedos: una gota y ya te manchan
+      rojo profundo.\r"
+  - character: {fileID: 11400000, guid: f89765118788716429593870b25a3bd9, type: 2}
+    text: "Pesa\u2026 y el olor es denso."
+  - character: {fileID: 11400000, guid: 6ade437b8d66a5e4c874c1bac2d863de, type: 2}
+    text: "Justo: pesa, ti\xF1e y crepita bajo. Eso enga\xF1ar\xE1 al brasero."
+  - character: {fileID: 11400000, guid: f89765118788716429593870b25a3bd9, type: 2}
+    text: "\xBFC\xF3mo la tomamos sin da\xF1arlo?"
+  - character: {fileID: 11400000, guid: 1e305b41ed9f8be46bcc52ac110ba113, type: 2}
+    text: Con espina de maguey o una ramita, nunca con cuchillo. Solo lo que ofrece
+      la herida abierta.
